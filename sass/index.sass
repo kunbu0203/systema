@@ -1,0 +1,902 @@
+@charset "utf-8"
+@import "var.sass"
+
+	
+@keyframes arrow-down
+	0%
+		transform: translateY(-150%)
+	100%
+		transform: translateY(130%)
+
+@keyframes click
+	0%
+		transform: translate(0)
+		box-shadow: 5px 5px 10px rgba(0,0,0,0.3 )
+	50%
+		transform: translate(0)
+		box-shadow: 5px 5px 10px rgba(0,0,0,0.3 )
+	75%
+		transform: translate(5px,5px)
+		box-shadow: none
+	100%
+		transform: translate(0)
+		box-shadow: 5px 5px 10px rgba(0,0,0,0.3 )
+
+@keyframes follow
+	0%
+		transform: translateY(0)
+	100%
+		transform: translateY(8px)
+
+.banner .pattern img,.banner .clayDoll,.banner .products,.protest .slogan,.protest .board
+	opacity: 0
+
+// *
+//     outline: 1px solid red
+
+
+article
+	overflow: hidden
+	.banner
+		width: 100%
+		background-image: url(../images/BG.jpg)
+		background-size: cover
+		+rwd(1024px)
+			padding-top: 50px
+		+rwd(768px)
+			background-image: url(../images/BG_m.jpg)
+			padding-top: 40px
+		.wrapper
+			width: 70%
+			height: 55vw
+			margin: auto
+			position: relative
+			+rwd(1024px)
+				width: 80%
+			+rwd(768px)
+				width: 90%
+				height: 185vw
+			figure
+				position: absolute
+			.pattern
+				width: calc(570/1170*100%)
+				top: 6%
+				left: 0
+				+rwd(1024px)
+					top: 0
+				+rwd(768px)
+					width: 100%
+			.clayDoll
+				width: calc(595/1170*100%)
+				bottom: 11%
+				right: 2%
+				+rwd(1024px)
+					bottom: 7%
+				+rwd(768px)
+					width: 100%
+					bottom: 13%
+					right: 0
+				img
+					&:nth-of-type(2)
+						display: none
+					+rwd(768px)
+						&:nth-of-type(1)
+							display: none
+						&:nth-of-type(2)
+							display: block
+			.products
+				width: calc(330/1170*100%)
+				bottom: 18%
+				left: 14%
+				+rwd(1024px)
+					bottom: 16%
+				+rwd(768px)
+					width: 55%
+					bottom: 18%
+					left: 2%
+				img
+					&:nth-of-type(2)
+						display: none
+					+rwd(768px)
+						&:nth-of-type(1)
+							display: none
+						&:nth-of-type(2)
+							display: block
+			.scroll
+				width: 70px
+				position: absolute
+				bottom: 23%
+				left: 0
+				right: 0
+				margin: auto
+				+rwd(1024px)
+					bottom: 20%
+				+rwd(768px)
+					bottom: 14%
+				p
+					font-size: 22px
+					color: $blue
+					letter-spacing: 1px
+					+rwd(1024px)
+						font-size: 20px
+				figure
+					width: 16px
+					padding: 0 30px
+					margin-top: 10px
+					overflow: hidden
+					+rwd(1024px)
+						width: 14px
+						padding: 7px 27px
+					img
+						animation: arrow-down 2s infinite linear
+			p.protect
+				font-size: 12px
+				line-height: 1.5
+				position: absolute
+				bottom: 18%
+				left: -20%
+				+rwd(1024px)
+					width: 300px
+					bottom: 12%
+					left: -10%
+				+rwd(768px)
+					display: none
+
+	.protest
+		background-color: $blue
+		position: relative
+		width: 100%
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			width: 100%
+			height: 100%
+			background-color: $blue
+			transform-origin: left
+			transform: skewY(-5deg)
+		.hands
+			width: 70%
+			position: absolute
+			right: 0
+			bottom: 20%
+			z-index: 1
+			+rwd(1024px)
+				width: 70%
+			+rwd(768px)
+				width: 115%
+				bottom: 10%
+		.wrapper
+			width: 65%
+			max-width: 1300px
+			margin: auto
+			position: relative
+			top: -8.5vw
+			z-index: 2
+			+rwd(1024px)
+				width: 75%
+			+rwd(768px)
+				width: 85%
+				top: 0
+				transform-origin: left
+				text-align: right
+				padding: 2% 0
+			figure
+				display: inline-block
+				vertical-align: middle
+			.slogan
+				width: 50%
+				margin: 0 7% 0 2%
+				+rwd(768px)
+					width: 100%
+					margin: 0
+					padding: 8% 0 2% 0
+			.board
+				width: 40%
+				+rwd(768px)
+					width: 50%
+
+	.videos
+		width: 100%
+		margin-top: -10vw
+		position: relative
+		z-index: 3
+		transform-origin: right
+		transform: skewY(3.5deg)
+		overflow: hidden
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			width: 100%
+			height: 130%
+			top: -8vw
+			background-image: url(../images/BG.jpg)
+			background-size: cover
+			transform-origin: right
+			transform: skewY(-3.5deg)
+		.wrapper
+			width: 65%
+			max-width: 1170px
+			margin: auto
+			position: relative
+			transform-origin: right
+			transform: skewY(-3.5deg)
+			+rwd(768px)
+				width: 85%
+				padding: 5% 0
+			.videosTitle
+				width: calc(895/1170*100%)
+				margin: 5% auto 3% auto
+				+rwd(768px)
+					width: 85%
+					margin: 0 auto 5% auto
+				img
+					&:nth-of-type(2)
+						display: none
+				+rwd(768px)
+					width: 100%
+					img
+						&:nth-of-type(1)
+							display: none
+						&:nth-of-type(2)
+							display: block
+			.videoSlider
+				width: 90%
+				margin: auto
+				position: relative
+				&:before
+					content: ''
+					display: block
+					position: absolute
+					left: -10%
+					top: 0
+					width: 20%
+					height: 2%
+					background-color: $pink
+					z-index: 10
+					transform: skewY(-3.5deg)
+				&:after
+					content: ''
+					display: block
+					width: 90%
+					height: 110%
+					position: absolute
+					top: 0
+					left: 50%
+					background-color: #fff
+					transform: translateX(-50%) skewY(-3.5deg)
+					transform-origin: left
+				.videoWrapper
+					position: relative
+					&:before
+						content: ''
+						display: block
+						position: absolute
+						right: -10%
+						bottom: 0
+						width: 20%
+						height: 2%
+						background-color: $pink
+						transform: skewY(-3.5deg)
+					.videoContent
+						position: relative
+						padding-bottom: 56.25%
+						height: 0
+						overflow: hidden
+						iframe
+							position: absolute
+							top: 0
+							left: 0
+							width: 100%
+							height: 100%
+					.owl-dots
+						position: absolute
+						bottom: -115px
+						left: 50%
+						transform: translateX(-50%)
+						+rwd(768px)
+							bottom: -40%
+						+rwd(640px)
+							bottom: -50%
+						+rwd(480px)
+							bottom: -55%
+						span
+							background: $blue
+							opacity: .5
+						.owl-dot.active
+							span
+								opacity: 1
+				.btn_prev
+					top: 40%
+					left: -10%
+					+rwd(768px)
+						left: -13%
+					+rwd(480px)
+						bottom: -65%
+				.btn_next
+					top: 40%
+					right: -10%
+					+rwd(768px)
+						right: -13%
+					+rwd(480px)
+						bottom: -65%
+				.head_woman
+					width: calc(170/1170*100%)
+					position: absolute
+					left: -15%
+					bottom: -15%
+					z-index: 20
+					+rwd(768px)
+						width: 25%
+						left: -10%
+						bottom: -55%
+				.head_man
+					width: calc(170/1170*100%)
+					position: absolute
+					right: -15%
+					bottom: -15%
+					z-index: 20
+					+rwd(768px)
+						width: 25%
+						right: -10%
+						bottom: -55%
+			.videoName
+				width: 100%
+				font-size: 28px
+				color: #333333
+				text-align: center
+				position: relative
+				z-index: 20
+				padding: 35px 0 15% 0
+				pointer-events: none
+				+rwd(1024px)
+					padding: 5% 0 18% 0
+				+rwd(768px)
+					height: 56px
+					padding: 5% 0 20% 0
+					span
+						display: block
+				+rwd(480px)
+					font-size: 20px
+				+rwd(340px)
+					font-size: 18px
+	.introduction
+		position: relative
+		z-index: 4
+		width: 100%
+		margin-bottom: 5vw
+		&:before
+			content: ''
+			display: block
+			position: absolute
+			width: 100%
+			height: 120%
+			background: linear-gradient( 45deg, #fff 1.5%, #e5ebf4 0, #e5ebf4 48.5%, #fff 0, #fff 51.5%, #e5ebf4 0, #e5ebf4 98.5%, #fff 0 )
+			background-size: 20px 20px
+			background-repeat: repeat
+			transform-origin: right
+			transform: skewY(3.5deg)
+		.wrapper
+			position: relative
+			max-width: 1300px
+			z-index: 4
+			width: 70%
+			margin: auto
+			+rwd(1024px)
+				width: 85%
+			+rwd(768px)
+				width: 100%
+				overflow: hidden
+			.knowledgeSlider
+				position: relative
+				padding: 5% 0 10% 0
+				.knowledgeTitle
+					width: 45%
+					max-width: 534px
+					margin: auto
+					+rwd(768px)
+						width: 75%
+				.knowledgeContent
+					width: 100%
+					font-size: 0
+					position: relative
+					margin-top: -35px
+					+rwd(768px)
+						width: 90%
+						margin: -20px auto 0 auto
+					.knowledgeWrapper
+						.owl-item
+							padding: 10px
+							box-sizing: border-box
+						.knowledge
+							position: relative
+							text-align: right
+							padding-right: 5%
+							margin-bottom: 3%
+							box-sizing: border-box
+							+rwd(768px)
+								text-align: left
+								padding-right: 0
+								margin-bottom: 5%
+							.knowledgeBG
+								width: 97%
+								height: 95%
+								position: absolute
+								left: 3%
+								bottom: -5%
+								background-color: $blue
+								box-shadow: 0 0 10px rgba(0,0,0,0.3)
+								+rwd(768px)
+									width: 90%
+									height: 100%
+									left: 50%
+									bottom: -5%
+									transform: translateX(-50%)
+							.contentBG
+								position: absolute
+								width: 52%
+								padding-bottom: 42%
+								background-color: #ffffff
+								top: 50%
+								left: 0
+								transform: translateY(-50%)
+								box-shadow: 0 0 10px rgba(0,0,0,0.3)
+								+rwd(768px)
+									display: none
+							.knowledgeImg
+								width: 48%
+								display: inline-block
+								vertical-align: middle
+								position: relative
+								box-shadow: 0 0 10px rgba(0,0,0,0.3)
+								+rwd(768px)
+									width: 90%
+									z-index: 50
+							.knowledgeTxt
+								width: 52%
+								padding: 0 12% 0 12%
+								position: absolute
+								top: 13%
+								left: 0
+								box-sizing: border-box
+								color: $blue
+								text-align: center
+								+rwd(1800px)
+									padding: 0 8% 0 8%
+								+rwd(1240px)
+									top: 12%
+								+rwd(768px)
+									width: 90%
+									position: relative
+									background-color: #ffffff
+									margin: -5% 0 0 10%
+									padding: 10%
+									z-index: 5
+									box-shadow: 0 0 10px rgba(0,0,0,0.3)
+								h5
+									font-size: 16px
+									+rwd(1640px)
+										font-size: 14px
+									+rwd(1640px)
+										font-size: 12px
+								h4
+									font-size: 32px
+									line-height: 1.5
+									padding: 10px 0
+									margin: 30px 0
+									border-top: 1px solid $blue
+									border-bottom: 1px solid $blue
+									+rwd(1640px)
+										margin: 15px 0
+										font-size: 30px
+									+rwd(1640px)
+										font-size: 28px
+									+rwd(1240px)
+										font-size: 22px
+									+rwd(1024px)
+										margin: 10px 0
+										padding: 5px 0
+										font-size: 20px
+								p
+									font-size: 22px
+									line-height: 1.5
+									color: #333333
+									text-align: left
+									+rwd(1640px)
+										font-size: 20px
+									+rwd(1640px)
+										font-size: 18px
+									+rwd(1240px)
+										font-size: 14px
+						.owl-dots
+							margin-top: 0
+							+rwd(768px)
+								margin-top: 8%
+							span
+								background: $blue
+								opacity: .5
+							.owl-dot.active
+								span
+									opacity: 1
+					.btn_prev
+						top: 40%
+						left: -10%
+						+rwd(1024px)
+							left: -7%
+						+rwd(768px)
+							top: auto
+							bottom: 0
+							left: -3%
+					.btn_next
+						top: 40%
+						right: -10%
+						+rwd(1024px)
+							right: -7%
+						+rwd(768px)
+							top: auto
+							bottom: 0
+							right: -3%
+			.no1brand
+				width: 90%
+				padding: 12% 0
+				margin: auto
+				position: relative
+				+rwd(768px)
+					width: 90%
+					padding: 20% 0 30% 0
+				.title
+					width: calc(895/1170*100%)
+					margin: auto
+					+rwd(768px)
+						width: 100%
+					img
+						&:nth-of-type(2)
+							display: none
+						+rwd(768px)
+							&:nth-of-type(1)
+								display: none
+							&:nth-of-type(2)
+								display: block
+				.logoGood
+					width: 100%
+					margin: 3% auto
+					text-align: center
+					figure
+						display: inline-block
+						vertical-align: middle
+					.logo_gold
+						width: 23%
+						+rwd(768px)
+							width: 40%
+					.cross
+						width: 5%
+						padding: 3%
+						+rwd(768px)
+							width: 7%
+					.logo_pink
+						width: 23%
+						+rwd(768px)
+							width: 40%
+				.teethBig
+					width: calc(200/1170*100%)
+					position: absolute
+					top: 0
+					left: -10%
+					+rwd(768px)
+						width: 28%
+				.teethSmall
+					width: calc(147/1170*100%)
+					position: absolute
+					bottom: 20%
+					right: -10%
+					+rwd(768px)
+						width: 20%
+						bottom: 0
+				.phDno1
+					width: calc(325/1170*100%)
+					position: absolute
+					bottom: -35%
+					left: 0
+					+rwd(768px)
+						width: 50%
+						bottom: -40%
+						left: 0
+						right: 0
+						margin: auto
+					
+			.PD_slider
+				width: 100%
+				position: relative
+				// margin-top: 8%
+				+rwd(768px)
+					width: 90%
+					margin: auto
+				.BG_slider
+					position: relative
+					transform-origin: left
+					transform: skewY(-4.5deg)
+					img
+						&:nth-of-type(2)
+							display: none
+						+rwd(768px)
+							&:nth-of-type(1)
+								display: none
+							&:nth-of-type(2)
+								display: block
+					&:before
+						content: ''
+						display: block
+						position: absolute
+						right: -5%
+						top: 8.5%
+						width: 30%
+						height: 1.5%
+						background-color: $pink
+						+rwd(768px)
+							right: -10%
+							top: 4%
+							height: 1%
+					&:after
+						content: ''
+						display: block
+						position: absolute
+						left: -5%
+						bottom: 8.5%
+						width: 30%
+						height: 1.5%
+						background-color: $pink
+						+rwd(768px)
+							right: -10%
+							bottom: 4%
+							height: 1%
+				.product_wrapper
+					width: 85%
+					position: absolute
+					left: 50%
+					top: 50%
+					transform: translate(-50%,-50%)
+					+rwd(768px)
+						width: 90%
+						left: 50%
+						top: 0
+						transform: translate(-50%,8%)
+					.product
+						font-size: 0
+						.product_img
+							width: 45%
+							display: inline-block
+							vertical-align: top
+							+rwd(768px)
+								width: 88%
+								display: block
+								margin: auto
+							img
+								&:nth-of-type(2)
+									display: none
+								+rwd(768px)
+									&:nth-of-type(1)
+										display: none
+									&:nth-of-type(2)
+										display: block
+						.product_content
+							width: 55%
+							display: inline-block
+							padding-left: 2%
+							box-sizing: border-box
+							vertical-align: top
+							position: relative
+							+rwd(768px)
+								width: 100%
+								padding: 5% 0 0 0
+							#toothbrushX3
+								padding-left: 3%
+								+rwd(768px)
+									padding-left: 0
+							.txt
+								h4
+									font-size: 32px
+									color: $blue
+									+rwd(1380px)
+										font-size: 26px
+									+rwd(1024px)
+										font-size: 20px
+									+rwd(768px)
+										font-size: 32px
+									+rwd(560px)
+										font-size: 28px
+									+rwd(480px)
+										font-size: 22px
+									+rwd(400px)
+										font-size: 17px
+								.product_logo02
+									padding: 15px 0
+									+rwd(1380px)
+										padding: 10px 0
+									+rwd(1024px)
+										padding: 7px 0
+									+rwd(768px)
+										padding: 15px 0
+									+rwd(480px)
+										padding: 10px 0
+									+rwd(400px)
+										padding: 6px 0
+									img
+										width: auto
+										height: 62px
+										display: inline-block
+										vertical-align: text-bottom
+										padding-right: 7px
+										+rwd(1380px)
+											height: 49px
+										+rwd(1024px)
+											height: 42px
+										+rwd(768px)
+											height: 62px
+										+rwd(560px)
+											height: 48px
+										+rwd(480px)
+											height: 42px
+										+rwd(400px)
+											height: 35px
+									h3
+										font-size: 60px
+										color: $pink
+										display: inline-block
+										vertical-align: text-bottom
+										+rwd(1380px)
+											font-size: 46px
+										+rwd(1024px)
+											font-size: 40px
+										+rwd(768px)
+											font-size: 60px
+										+rwd(560px)
+											font-size: 46px
+										+rwd(480px)
+											font-size: 40px
+										+rwd(400px)
+											font-size: 32px
+								ul
+									margin-left: 38px
+									+rwd(768px)
+										margin-left: 30px
+									li
+										font-size: 22px
+										line-height: 1.5
+										list-style-type: circle
+										color: #333333
+										+rwd(1380px)
+											font-size: 18px
+										+rwd(1024px)
+											font-size: 15px
+										+rwd(768px)
+											font-size: 22px
+										+rwd(560px)
+											font-size: 18px
+										+rwd(480px)
+											font-size: 14px
+										p
+											font-size: 16px
+											+rwd(1380px)
+												font-size: 12px
+											+rwd(768px)
+												font-size: 16px
+											+rwd(560px)
+												font-size: 12px
+
+						.feature
+							width: 55%
+							font-size: 0
+							position: absolute
+							right: 0
+							bottom: 13%
+							text-align: right
+							+rwd(768px)
+								width: 55%
+								padding-bottom: 58.1%
+								position: relative
+								margin: 4% auto 0 auto
+							figure
+								width: 33%
+								display: inline-block
+								padding: 2%
+								box-sizing: border-box
+								&:nth-of-type(3)
+									padding-right: 0
+								+rwd(768px)
+									width: 100%
+									padding: 0 5%
+									position: absolute
+									top: 0
+									left: 0
+									display: none
+									&:nth-of-type(1)
+										display: block
+								+rwd(360px)
+									width: 50%
+						.feature.toothbrushX3
+							+rwd(768px)
+								margin: 8% auto 0 auto
+						.product_content.toothbrush
+							width: 63%
+							margin-left: -8%
+							+rwd(768px)
+								margin-left: 0
+								width: 100%
+								padding: 5% 0 0 0
+						.product_content.children
+							width: 100%
+							padding: 2.5%
+							position: absolute
+							top: 0
+							left: 0
+							.txt
+								width: 70%
+								display: inline-block
+								vertical-align: middle
+								span
+									display: inline-block
+							.award
+								width: 30%
+								display: inline-block
+								vertical-align: middle
+							+rwd(768px)
+								position: relative
+								.txt
+									width: 100%
+								.award
+									width: 55%
+									padding-bottom: 3%
+						.product_img.children
+							width: 60%
+							+rwd(768px)
+								width: 88%
+						.feature.children
+							figure
+								width: 34%
+								&:nth-of-type(3)
+									padding-right: 2%
+								+rwd(768px)
+									width: 100%
+				.btn_prev
+					top: 40%
+					left: -10%
+					+rwd(1024px)
+						left: -7%
+					+rwd(768px)
+						top: 34%
+						left: -3%
+				.btn_next
+					top: 40%
+					right: -10%
+					+rwd(1024px)
+						right: -7%
+					+rwd(768px)
+						top: 34%
+						right: -3%
+				.bigBtn
+					width: 45%
+					position: absolute
+					left: 0
+					right: 0
+					bottom: 7%
+					margin: auto
+					box-shadow: 5px 5px 10px rgba(0,0,0,0.3 )
+					border-radius: 10px
+					z-index: 99
+					transition: .3s
+					animation: click 1s infinite linear
+					+rwd(768px)
+						width: 90%
+						bottom: 2%
+
+.followBtn
+	width: 35%
+	max-width: 270px
+	position: absolute
+	bottom: 20px
+	right: 10px
+	z-index: 99
+	animation: follow 1s infinite linear alternate
+	a
+		display: block
