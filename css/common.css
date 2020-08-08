@@ -8,16 +8,45 @@ img {
   vertical-align: top;
 }
 
-header .header {
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+header .menu {
+  padding: 0 15px;
+}
+header .menu:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+header .menu .logo {
+  float: left;
+}
+header .menu .logo .header {
+  display: block;
   width: 210px;
-  position: absolute;
-  top: 10px;
-  left: 10px;
 }
 @media only screen and (max-width: 768px) {
-  header .header {
+  header .menu .logo .header {
     width: 120px;
   }
+}
+header .menu .nav {
+  float: right;
+  text-align: right;
+}
+header .menu .nav .target {
+  display: inline-block;
+  font-size: 20px;
+  font-weight: bold;
+  color: #003893;
+}
+header .menu .nav .official {
+  display: inline-block;
 }
 
 footer {
@@ -30,8 +59,7 @@ footer {
 footer .footer_wrapper {
   max-width: 1250px;
   padding: 20px 15px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: auto;
   font-size: 0;
 }
@@ -122,21 +150,15 @@ footer .footer_wrapper .row a.tel {
   font-size: 21px;
   text-align: center;
   position: absolute;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
   transition: 0.3s;
   z-index: 99;
 }
 .btn_prev:hover {
-  -webkit-transform: translateX(-10%);
-      -ms-transform: translateX(-10%);
-          transform: translateX(-10%);
+  transform: translateX(-10%);
 }
 .btn_prev img {
   padding: 12px 0;
-  -webkit-transform: scaleX(-1);
-      -ms-transform: scaleX(-1);
-          transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 .btn_prev span {
   display: inline-block;
@@ -149,15 +171,11 @@ footer .footer_wrapper .row a.tel {
   font-size: 21px;
   text-align: center;
   position: absolute;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
   transition: 0.3s;
   z-index: 99;
 }
 .btn_next:hover {
-  -webkit-transform: translateX(10%);
-      -ms-transform: translateX(10%);
-          transform: translateX(10%);
+  transform: translateX(10%);
 }
 .btn_next img {
   padding: 12px 0;
@@ -193,9 +211,7 @@ footer .footer_wrapper .row a.tel {
     font-size: 22px;
   }
   .btn_prev:hover {
-    -webkit-transform: none;
-        -ms-transform: none;
-            transform: none;
+    transform: none;
   }
   .btn_prev img {
     padding: 8px 0;
@@ -205,9 +221,7 @@ footer .footer_wrapper .row a.tel {
     font-size: 22px;
   }
   .btn_next:hover {
-    -webkit-transform: none;
-        -ms-transform: none;
-            transform: none;
+    transform: none;
   }
   .btn_next img {
     padding: 8px 0;

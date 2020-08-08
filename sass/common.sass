@@ -2,13 +2,33 @@
 @import "var.sass"
 
 header
-	.header
-		width: 210px
-		position: absolute
-		top: 10px
-		left: 10px
-		+rwd(768px)
-			width: 120px
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	z-index: 10
+	.menu
+		+clearfix
+		padding: 0 15px
+		.logo
+			float: left
+			.header
+				display: block
+				width: 210px
+				+rwd(768px)
+					width: 120px
+		.nav
+			float: right
+			text-align: right
+			.target
+				display: inline-block
+				font-size: 20px
+				font-weight: bold
+				color: $blue
+				
+			.official
+				display: inline-block
+
 
 footer
 	width: 100%

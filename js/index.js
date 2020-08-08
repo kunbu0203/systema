@@ -30,7 +30,6 @@ function resizeDo() {
   }
 }
 
-
 function doAnimate(){
     var controller = new ScrollMagic.Controller();
 
@@ -40,47 +39,25 @@ function doAnimate(){
     TweenMax.set('.banner .clayDoll', {y:100,opacity:0})
     TweenMax.set('.banner .products', {y:100,opacity:0,delay:-.5})
 
-    var tween = new TimelineMax()
+    var tween1 = new TimelineMax()
     .add(TweenMax.to('.banner .pattern img', .5, {x:0,y:0,opacity:1}))
     .add(TweenMax.to('.banner .clayDoll', .5, {y:0,opacity:1}))
     .add(TweenMax.to('.banner .products', .5, {y:0,opacity:1,delay:-.5}))
 
     // build scene
-    var scene = new ScrollMagic.Scene({
+    var scene1 = new ScrollMagic.Scene({
       triggerElement: ".banner",
     //   duration: 500,
       offset: 0, //指標位移
       triggerHook: .5, // 觸發位置 0-1,onLeave,onCenter,onEnter
       reverse: false, //動畫重複 default:true
     })
-      .setTween(tween)
+      .setTween(tween1)
     //   .addIndicators({ name: "1 (duration: 0)" }) // 指標顯示
       .addTo(controller);
     // part01 end--------------------------
 
     // part02 start--------------------------
-
-    TweenMax.set('.protest .slogan', {opacity:0})
-    TweenMax.set('.protest .board', {y:100,opacity:0})
-
-    var tween1 = new TimelineMax()
-    .add(TweenMax.to('.protest .slogan', 1, {opacity:1}))
-    .add(TweenMax.to('.protest .board', 1, { ease: Back.easeOut.config(4), y:0,opacity:1,delay:-1}))
-
-    // build scene
-    var scene1 = new ScrollMagic.Scene({
-      triggerElement: ".protest",
-    //   duration: 500,
-      offset: 0, //指標位移
-      triggerHook: .5, // 觸發位置 0-1,onLeave,onCenter,onEnter
-      reverse: false, //動畫重複 default:true
-    })
-      .setTween(tween1)
-      // .addIndicators({ name: "2 (duration: 0)" }) // 指標顯示
-      .addTo(controller);
-    // part02 end--------------------------
-
-    // part03 start--------------------------
 
     TweenMax.set('.videos .wrapper', {y:100,opacity:0})
 
@@ -96,11 +73,11 @@ function doAnimate(){
       reverse: false, //動畫重複 default:true
     })
       .setTween(tween2)
-      // .addIndicators({ name: "3 (duration: 0)" }) // 指標顯示
+      // .addIndicators({ name: "2 (duration: 0)" }) // 指標顯示
       .addTo(controller);
-    // part03 end--------------------------
+    // part02 end--------------------------
 
-    // part04 start--------------------------
+    // part03 start--------------------------
 
     TweenMax.set('.knowledgeSlider', {y:100,opacity:0})
 
@@ -116,11 +93,11 @@ function doAnimate(){
       reverse: false, //動畫重複 default:true
     })
       .setTween(tween3)
-      // .addIndicators({ name: "4 (duration: 0)" }) // 指標顯示
+      // .addIndicators({ name: "3 (duration: 0)" }) // 指標顯示
       .addTo(controller);
-    // part04 end--------------------------
+    // part03 end--------------------------
 
-    // part05 start--------------------------
+    // part04 start--------------------------
 
     TweenMax.set('.PD_slider', {y:100,opacity:0})
 
@@ -136,9 +113,9 @@ function doAnimate(){
       reverse: false, //動畫重複 default:true
     })
       .setTween(tween4)
-      // .addIndicators({ name: "5 (duration: 0)" }) // 指標顯示
+      // .addIndicators({ name: "4 (duration: 0)" }) // 指標顯示
       .addTo(controller);
-    // part05 end--------------------------
+    // part04 end--------------------------
 }
 
 function setOwl_product(){
@@ -260,12 +237,75 @@ function setFeatureCarousel(){
   },4000)
 }
 
+function preload() {
+  var queue = new createjs.LoadQueue();
+  var preloadImages = [
+    "images/award.png",
+    "images/BG_m.jpg",
+    "images/BG_slider_m.png",
+    "images/BG_slider.png",
+    "images/BG.jpg",
+    "images/btn.png",
+    "images/fb_share_01.jpg",
+    "images/hands.png",
+    "images/knowledgeImg01.jpg",
+    "images/knowledgeImg02.jpg",
+    "images/knowledgeImg03.jpg",
+    "images/mouthwash_01.png",
+    "images/mouthwash_02.png",
+    "images/mouthwash_m.png",
+    "images/mouthwash.png",
+    "images/pattern.png",
+    "images/products.png",
+    "images/toothbrush_01.png",
+    "images/toothbrush_02.png",
+    "images/toothbrush_03.png",
+    "images/toothbrush_m.png",
+    "images/toothbrush.png",
+    "images/toothbrushChildren_m.png",
+    "images/toothbrushChildren.png",
+    "images/toothbrushX3_01.png",
+    "images/toothbrushX3_02.png",
+    "images/toothbrushX3_03.png",
+    "images/toothbrushX3_m.png",
+    "images/toothbrushX3.png",
+    "images/toothpaste_01.png",
+    "images/toothpaste_02.png",
+    "images/toothpaste_03.png",
+    "images/toothpaste_m.png",
+    "images/toothpaste.png"
+  ];
+  queue.on("complete", function (event) {
+    //console.log('Complete');
+    setTimeout(function () {
+      $('.loading').fadeOut(function () {
+          $('body').removeClass('is-loading');
+      });
+    }, 500);
+    setTimeout(function () {
+        doAnimate();
+    }, 500);
+  });
+  queue.on("error", function (event) {
+    console.log('Error');
+  });
+  queue.on("fileload", function (event) {
+    //console.log('File loaded');
+  });
+  queue.on("progress", function (event) {
+    var progress = Math.round(event.loaded * 100);
+
+    //console.log('General progress', Math.round(event.loaded) * 100);
+    $('.loading_status').text(progress + '%');
+  });
+  queue.loadManifest(preloadImages);
+}
 
 $(document).ready(function(){
     resizeDo();
     window.addEventListener('resize', resizeDo);
 
-    doAnimate();
+    //doAnimate();
     setOwl_product();
     setOwl_video();
     setOwl_knowledge();
@@ -278,6 +318,8 @@ $(document).ready(function(){
     //     $('.followBtn').stop().animate({'bottom':-target+20},600);
     //   }
     // });
+
+    preload();
 
 })
 
