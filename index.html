@@ -24,6 +24,8 @@
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154952265-1"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <script type="text/javascript" src="./js/libs/preloadjs-0.4.1.min.js"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -33,6 +35,14 @@
     </script>
   </head>
   <body class="is-loading">
+    <div class="loading">
+      <figure class="loading_bg"><img src="./images/_loading_bg.jpg" alt=""/><img src="./images/_loading_bg_mb.jpg" alt=""/></figure>
+      <div class="loading_wrapper">
+        <figure class="loading_shine"><img src="./images/_loading_shine.png" alt=""/></figure>
+        <figure class="loading_slogan"><img src="./images/_loading_slogan.png" alt=""/></figure>
+        <div class="loading_status"></div>
+      </div>
+    </div>
     <header>
       <div class="menu">
         <div class="logo">
@@ -42,39 +52,58 @@
         </div>
         <div class="nav">
           <div class="target">
-            <a href="#" class="target_item">影音專區</a>
-            <a href="#" class="target_item">真・刷牙冷知識</a>
-            <a href="#" class="target_item">商品專區</a>
+            <div class="target_item">
+              <a href="#" class="video_action">影音專區</a>
+            </div>
+            <div class="target_item">
+              <a href="#" class="knowledge_action">真・刷牙冷知識</a>
+            </div>
+            <div class="target_item">
+              <a href="#" class="product_action">商品專區</a>
+            </div>
           </div>
-          <div class="official">細節官方臉書</div>
+          <div class="official">
+            <a href="#">細節官方臉書</a>
+          </div>
+        </div>
+        <div class="ham">
+          <div class="line"></div>
+          <div class="line"></div>
+          <div class="line"></div>
         </div>
       </div>
     </header>
     <article>
       <section class="banner">
         <div class="wrapper">
-            <figure class="pattern"><img src="./images/pattern.png" alt=""/></figure>
-            <figure class="clayDoll"><img src="./images/clayDoll.png" alt=""/><img src="./images/clayDoll_m.png" alt=""/></figure>
-            <figure class="products"><img src="./images/products.png" alt=""/><img src="./images/products_m.png" alt=""/></figure>
-            <div class="scroll">
-              <p>Scroll</p>
+          <figure class="products"><img src="./images/products.png" alt=""/><img src="./images/products_m.png" alt=""/></figure>
+          <figure class="pattern"><img src="./images/pattern.png" alt=""/></figure>
+          <figure class="dollx2"><img src="./images/dollx2.png" alt=""/></figure>
+          <figure class="doctor"><img src="./images/doctor.png" alt=""/></figure>
+          <div class="scroll">
+            <p>Scroll</p>
+            <div class="scroll_arrow">
               <figure><img src="./images/arrow_01.png" alt=""/></figure>
             </div>
-            <p class="protect">*INTAGE SRI 日本口腔護理市場2000年1月~2019年12月連續20年銷售額No.1公司</p>
+          </div>
         </div>
+        <p class="protect">
+          <span>INTAGE SRI <br class="protect_br">日本口腔護理市場2000年1月~2019年12月連續20年銷售額No.1公司</span>
+        </p>
       </section>
-      <!-- <section class="protest">
-        <figure class="hands"><img src="./images/hands.png" alt=""/></figure>
-        <div class="wrapper">
-            <figure class="slogan"><img src="./images/slogan.png" alt=""/></figure>
-            <figure class="board"><img src="./images/board.png" alt=""/></figure>
-        </div>
-      </section> -->
       <section class="videos">
         <div class="wrapper">
-          <figure class="videosTitle"><img src="./images/title.png" alt=""/><img src="./images/title_m.png" alt=""/></figure>
+          <div class="videosTitle">
+            <figure class="videosTitle_text"><img src="./images/video_title_01.png" alt=""/><img src="./images/video_title_01_mb.png" alt=""/></figure>
+            <figure class="videosTitle_text"><img src="./images/video_title_02.png" alt=""/><img src="./images/video_title_02_mb.png" alt=""/></figure>
+            <figure class="videosTitle_text"><img src="./images/video_title_03.png" alt=""/><img src="./images/video_title_03_mb.png" alt=""/></figure>
+            <figure class="videosTitle_bg"><img src="./images/video_title_bg.png" alt=""/><img src="./images/video_title_bg_mb.png" alt=""/></figure>
+          </div>
           <div class="videoSlider">
             <div class="videoWrapper owl-carousel owl-theme">
+              <div class="videoContent">
+                <iframe src="https://www.youtube.com/embed/ukbUXnAyIQQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
               <div class="videoContent">
                 <iframe src="https://www.youtube.com/embed/XXYvvLk7IaI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
               </div>
@@ -83,32 +112,21 @@
               </div>
             </div>
             <a class="btn_prev" href="">
-              <figure><img src="./images/arrow_02.png" alt=""/></figure>
+              <figure><img src="./images/arrow_wt.png" alt=""/></figure>
             </a>
             <a class="btn_next" href="">
-              <figure><img src="./images/arrow_02.png" alt=""/></figure>
+              <figure><img src="./images/arrow_wt.png" alt=""/></figure>
             </a>
-            <figure class="head_woman"><img src="./images/head_woman.png" alt=""/></figure>
-            <figure class="head_man"><img src="./images/head_man.png" alt=""/></figure>
+            <figure class="man"><img src="./images/man.png" alt=""/></figure>
+            <figure class="woman"><img src="./images/woman.png" alt=""/></figure>
           </div>
-          <div class="videoName">
+          <!-- <div class="videoName">
             <p>獅王細潔新品上市</p>
-          </div>
+          </div> -->
         </div>
       </section>
       <section class="introduction">
         <div class="wrapper">
-          <!-- <div class="no1brand">
-            <figure class="title"><img src="./images/title.png" alt=""/><img src="./images/title_m.png" alt=""/></figure>
-            <div class="logoGood">
-              <figure class="logo_gold"><img src="./images/logo_gold.png" alt=""/></figure>
-              <figure class="cross"><img src="./images/cross.png" alt=""/></figure>
-              <figure class="logo_pink"><img src="./images/logo_pink.png" alt=""/></figure>
-            </div>
-            <figure class="teethBig"><img src="./images/teeth_big.png" alt=""/></figure>
-            <figure class="teethSmall"><img src="./images/teeth_small.png" alt=""/></figure>
-            <figure class="phDno1"><img src="./images/phDno1.png" alt=""/></figure>
-          </div> -->
           <div class="knowledgeSlider">
             <figure class="knowledgeTitle"><img src="./images/knowledgeTitle.png" alt=""/></figure>
             <div class="knowledgeContent">
@@ -268,12 +286,6 @@
         </div>
       </section>
     </article>
-    <div class="loading">
-      <div class="loading_wrapper">
-        <figure><img src="./images/_loading_slogan.png" alt=""/></figure>
-        <div class="loading_status"></div>
-      </div>
-    </div>
     <!-- <div class="followBtn" id="followBtn">
       <a href="http://bit.ly/2sV6xV6" target="_blank">
         <figure class="followImg"><img src="./images/followBtn.png" alt=""/></figure>
@@ -297,9 +309,7 @@
         <div class="copyright">獅王家品股份有限公司 版權所有 轉載必究 LION.TW Inc.</div>
       </div>
     </footer>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
-    <script src="https://code.createjs.com/1.0.0/preloadjs.min.js"></script>
-    <!-- <script type="text/javascript" src="./js/libs/preloadjs-0.4.1.min.js"></script> -->
+    <!-- <script src="https://code.createjs.com/1.0.0/preloadjs.min.js"></script> -->
     <script type="text/javascript" src="./js/libs/highlight.pack.js"></script>
     <script type="text/javascript" src="./js/libs/TweenMax.js"></script>
     <script type="text/javascript" src="./js/libs/ScrollMagic.js"></script>

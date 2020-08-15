@@ -8,7 +8,73 @@ var featureIndex3 = 0;
 var featureIndex2 = 0;
 var ww,wh;
 
+function preload() {
+  var queue = new createjs.LoadQueue();
+  var preloadImages = [
+    "images/_loading_bg.jpg",
+    "images/_loading_shine.png",
+    "images/_loading_slogan.png",
+    "images/award.png",
+    "images/BG_m.jpg",
+    "images/BG_slider_m.png",
+    "images/BG_slider.png",
+    "images/BG.jpg",
+    "images/btn.png",
+    "images/fb_share_01.jpg",
+    "images/hands.png",
+    "images/knowledgeImg01.jpg",
+    "images/knowledgeImg02.jpg",
+    "images/knowledgeImg03.jpg",
+    "images/mouthwash_01.png",
+    "images/mouthwash_02.png",
+    "images/mouthwash_m.png",
+    "images/mouthwash.png",
+    "images/pattern.png",
+    "images/products.png",
+    "images/toothbrush_01.png",
+    "images/toothbrush_02.png",
+    "images/toothbrush_03.png",
+    "images/toothbrush_m.png",
+    "images/toothbrush.png",
+    "images/toothbrushChildren_m.png",
+    "images/toothbrushChildren.png",
+    "images/toothbrushX3_01.png",
+    "images/toothbrushX3_02.png",
+    "images/toothbrushX3_03.png",
+    "images/toothbrushX3_m.png",
+    "images/toothbrushX3.png",
+    "images/toothpaste_01.png",
+    "images/toothpaste_02.png",
+    "images/toothpaste_03.png",
+    "images/toothpaste_m.png",
+    "images/toothpaste.png"
+  ];
+  queue.on("complete", function (event) {
+    //console.log('Complete');
+    setTimeout(function () {
+      $('.loading').fadeOut(function () {
+          $('body').removeClass('is-loading');
+      });
+    }, 500);
+    setTimeout(function () {
+        //doAnimate();
+    }, 500);
+  });
+  queue.on("error", function (event) {
+    console.log('Error');
+  });
+  queue.on("fileload", function (event) {
+    //console.log('File loaded');
+  });
+  queue.on("progress", function (event) {
+    var progress = Math.round(event.loaded * 100);
 
+    //console.log('General progress', Math.round(event.loaded) * 100);
+    $('.loading_status').text(progress + '%');
+  });
+  queue.loadManifest(preloadImages);
+}
+ 
 function resizeDo() {
   ww = window.innerWidth;
   wh = window.innerHeight;
@@ -26,7 +92,7 @@ function resizeDo() {
   } else if (ww > 768 && isMobileStyle) {
     isMobileStyle = false;
     clearInterval(featureCarousel)
-    $('.introduction .feature figure').css('display','inline-block')
+    $('.introduction .feature figure').css('display','inline-block');
   }
 }
 
@@ -183,11 +249,13 @@ function setOwl_video(){
       margin:0,
       onTranslated:function(event){
         var page = event.page.index;     // Position of the current page
-        console.log('page',page)
+        $('.videosTitle_text').fadeOut();
         if(page ===0){
-          $('section.videos  .videoName p').html(videoName[0]);
+          $('.videosTitle_text:nth-of-type(1)').fadeIn();
         }else if(page ===1){
-          $('section.videos  .videoName p').html(videoName[1]);
+          $('.videosTitle_text:nth-of-type(2)').fadeIn();
+        }else if(page ===2){
+          $('.videosTitle_text:nth-of-type(3)').fadeIn();
         }
     }
   })
@@ -237,89 +305,63 @@ function setFeatureCarousel(){
   },4000)
 }
 
-function preload() {
-  var queue = new createjs.LoadQueue();
-  var preloadImages = [
-    "images/award.png",
-    "images/BG_m.jpg",
-    "images/BG_slider_m.png",
-    "images/BG_slider.png",
-    "images/BG.jpg",
-    "images/btn.png",
-    "images/fb_share_01.jpg",
-    "images/hands.png",
-    "images/knowledgeImg01.jpg",
-    "images/knowledgeImg02.jpg",
-    "images/knowledgeImg03.jpg",
-    "images/mouthwash_01.png",
-    "images/mouthwash_02.png",
-    "images/mouthwash_m.png",
-    "images/mouthwash.png",
-    "images/pattern.png",
-    "images/products.png",
-    "images/toothbrush_01.png",
-    "images/toothbrush_02.png",
-    "images/toothbrush_03.png",
-    "images/toothbrush_m.png",
-    "images/toothbrush.png",
-    "images/toothbrushChildren_m.png",
-    "images/toothbrushChildren.png",
-    "images/toothbrushX3_01.png",
-    "images/toothbrushX3_02.png",
-    "images/toothbrushX3_03.png",
-    "images/toothbrushX3_m.png",
-    "images/toothbrushX3.png",
-    "images/toothpaste_01.png",
-    "images/toothpaste_02.png",
-    "images/toothpaste_03.png",
-    "images/toothpaste_m.png",
-    "images/toothpaste.png"
-  ];
-  queue.on("complete", function (event) {
-    //console.log('Complete');
-    setTimeout(function () {
-      $('.loading').fadeOut(function () {
-          $('body').removeClass('is-loading');
-      });
-    }, 500);
-    setTimeout(function () {
-        doAnimate();
-    }, 500);
-  });
-  queue.on("error", function (event) {
-    console.log('Error');
-  });
-  queue.on("fileload", function (event) {
-    //console.log('File loaded');
-  });
-  queue.on("progress", function (event) {
-    var progress = Math.round(event.loaded * 100);
-
-    //console.log('General progress', Math.round(event.loaded) * 100);
-    $('.loading_status').text(progress + '%');
-  });
-  queue.loadManifest(preloadImages);
-}
-
 $(document).ready(function(){
-    resizeDo();
-    window.addEventListener('resize', resizeDo);
+  preload();
+  resizeDo();
+  window.addEventListener('resize', resizeDo);
 
-    //doAnimate();
-    setOwl_product();
-    setOwl_video();
-    setOwl_knowledge();
+  //doAnimate();
+  setOwl_product();
+  setOwl_video();
+  setOwl_knowledge();
 
-    // $(window).scroll(function(){
-    //   var target = $(window).scrollTop();
-    //   if(isMobileStyle){
-    //     $('.followBtn').stop().animate({'bottom':-target-60},600);
-    //   }else{
-    //     $('.followBtn').stop().animate({'bottom':-target+20},600);
-    //   }
-    // });
+  // $(window).scroll(function(){
+  //   var target = $(window).scrollTop();
+  //   if(isMobileStyle){
+  //     $('.followBtn').stop().animate({'bottom':-target-60},600);
+  //   }else{
+  //     $('.followBtn').stop().animate({'bottom':-target+20},600);
+  //   }
+  // });
 
-    preload();
+  $('.ham').click(function (e) { 
+    e.preventDefault();
+    $('.menu').toggleClass('show');
+    $('.nav').slideToggle();
+  });
+
+  $('.video_action').click(function (e) { 
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: $('section.videos .wrapper').offset().top - 50
+    }, 800);
+    $('.menu').removeClass('show');
+    if (isMobileStyle) {
+      $('.nav').slideUp();
+    }
+  });
+
+  $('.knowledge_action').click(function (e) { 
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: $('section.introduction .knowledgeSlider').offset().top - 50
+    }, 800);
+    $('.menu').removeClass('show');
+    if (isMobileStyle) {
+      $('.nav').slideUp();
+    }
+  });
+
+  $('.product_action').click(function (e) { 
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: $('section.introduction .PD_slider').offset().top - 50
+    }, 800);
+    $('.menu').removeClass('show');
+    if (isMobileStyle) {
+      $('.nav').slideUp();
+    }
+  });
 
 })
 
