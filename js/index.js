@@ -10,10 +10,6 @@ var ww,wh;
 function preload() {
   var queue = new createjs.LoadQueue();
   var preloadImages = [
-    "images/_loading_bg_mb.jpg",
-    "images/_loading_bg.jpg",
-    "images/_loading_shine.png",
-    "images/_loading_slogan.png",
     "images/BG_bottom_mb.png",
     "images/BG_bottom.png",
     "images/BG_m.jpg",
@@ -31,6 +27,10 @@ function preload() {
     "images/knowledgeImg05.jpg",
     "images/knowledgeImg06.jpg",
     "images/knowledgeTitle.png",
+    "images/loading_bg_mb.jpg",
+    "images/loading_bg.jpg",
+    "images/loading_shine.png",
+    "images/loading_slogan.png",
     "images/mouthwash_m.png",
     "images/mouthwash.png",
     "images/pattern.png",
