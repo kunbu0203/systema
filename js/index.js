@@ -1,6 +1,5 @@
 
 var arrowArr = ['適齦佳<span>牙膏</span>','無隱角EX<span>牙刷</span>','無隱角<span>系列牙刷</span>','兒童專業<span>護理牙刷</span>','適齦佳<span>漱口水</span>'];
-var videoName = ['獅王細潔新品上市','細潔兒童專業護理牙刷 <span>X 袋鼠白金獎評鑑</span>']
 var isMobileStyle = false;
 var featureCarousel;
 var featureIndex4 = 0;
@@ -11,43 +10,41 @@ var ww,wh;
 function preload() {
   var queue = new createjs.LoadQueue();
   var preloadImages = [
+    "images/_loading_bg_mb.jpg",
     "images/_loading_bg.jpg",
     "images/_loading_shine.png",
     "images/_loading_slogan.png",
-    "images/award.png",
+    "images/BG_bottom_mb.png",
+    "images/BG_bottom.png",
     "images/BG_m.jpg",
     "images/BG_slider_m.png",
     "images/BG_slider.png",
     "images/BG.jpg",
-    "images/btn.png",
+    "images/doctor.png",
+    "images/dollx2.png",
     "images/fb_share_01.jpg",
     "images/hands.png",
     "images/knowledgeImg01.jpg",
     "images/knowledgeImg02.jpg",
     "images/knowledgeImg03.jpg",
-    "images/mouthwash_01.png",
-    "images/mouthwash_02.png",
+    "images/knowledgeImg04.jpg",
+    "images/knowledgeImg05.jpg",
+    "images/knowledgeImg06.jpg",
+    "images/knowledgeTitle.png",
     "images/mouthwash_m.png",
     "images/mouthwash.png",
     "images/pattern.png",
+    "images/products_m.png",
     "images/products.png",
-    "images/toothbrush_01.png",
-    "images/toothbrush_02.png",
-    "images/toothbrush_03.png",
     "images/toothbrush_m.png",
     "images/toothbrush.png",
     "images/toothbrushChildren_m.png",
     "images/toothbrushChildren.png",
-    "images/toothbrushX3_01.png",
-    "images/toothbrushX3_02.png",
-    "images/toothbrushX3_03.png",
     "images/toothbrushX3_m.png",
     "images/toothbrushX3.png",
-    "images/toothpaste_01.png",
-    "images/toothpaste_02.png",
-    "images/toothpaste_03.png",
     "images/toothpaste_m.png",
-    "images/toothpaste.png"
+    "images/toothpaste.png",
+    "images/video_BG.jpg"
   ];
   queue.on("complete", function (event) {
     //console.log('Complete');
@@ -57,8 +54,8 @@ function preload() {
       });
     }, 500);
     setTimeout(function () {
-        //doAnimate();
-    }, 500);
+        doAnimate();
+    }, 700);
   });
   queue.on("error", function (event) {
     console.log('Error');
@@ -88,9 +85,11 @@ function resizeDo() {
   if ((ww <= 768) && !isMobileStyle) {
     isMobileStyle = true;
     setFeatureCarousel();
-
+    $('.nav').css('display','none');
+    $('.menu').removeClass('show');
   } else if (ww > 768 && isMobileStyle) {
     isMobileStyle = false;
+    $('.nav').css('display','block');
     clearInterval(featureCarousel)
     $('.introduction .feature figure').css('display','inline-block');
   }
@@ -99,16 +98,38 @@ function resizeDo() {
 function doAnimate(){
     var controller = new ScrollMagic.Controller();
 
+    // start--------------------------
+    
+    TweenMax.set('header .menu .menu_bg', {x:0,y:0,opacity:0})
+
+    var tween = new TimelineMax()
+    .add(TweenMax.to('header .menu .menu_bg', .3, {x:0,y:0,opacity:.85}))
+
+    // build scene
+    var scene = new ScrollMagic.Scene({
+      triggerElement: ".videos",
+    //   duration: 500,
+      offset: 0, //指標位移
+      triggerHook: 0, // 觸發位置 0-1,onLeave,onCenter,onEnter
+      reverse: true, //動畫重複 default:true
+    })
+      .setTween(tween)
+      // .addIndicators({ name: "0 (duration: 0)" }) // 指標顯示
+      .addTo(controller);
+    // end--------------------------
+
     // part01 start--------------------------
     
-    TweenMax.set('.banner .pattern img', {x:-100,y:50,opacity:0})
-    TweenMax.set('.banner .clayDoll', {y:100,opacity:0})
-    TweenMax.set('.banner .products', {y:100,opacity:0,delay:-.5})
+    TweenMax.set('.banner .pattern img', {x:0,y:-50,scale:1.5,opacity:0})
+    TweenMax.set('.banner .doctor img', {y:100,opacity:0})
+    TweenMax.set('.banner .products img', {y:100,opacity:0,delay:-.5})
+    TweenMax.set('.banner .dollx2 img', {y:100,opacity:0,delay:-.5})
 
     var tween1 = new TimelineMax()
-    .add(TweenMax.to('.banner .pattern img', .5, {x:0,y:0,opacity:1}))
-    .add(TweenMax.to('.banner .clayDoll', .5, {y:0,opacity:1}))
-    .add(TweenMax.to('.banner .products', .5, {y:0,opacity:1,delay:-.5}))
+    .add(TweenMax.to('.banner .pattern img', .5, {x:0,y:0,scale:1,opacity:1}))
+    .add(TweenMax.to('.banner .doctor img', .5, {y:0,opacity:1}))
+    .add(TweenMax.to('.banner .products img', .5, {y:0,opacity:1,delay:-.5}))
+    .add(TweenMax.to('.banner .dollx2 img', .5, {y:0,opacity:1,delay:-.5}))
 
     // build scene
     var scene1 = new ScrollMagic.Scene({
@@ -191,33 +212,33 @@ function setOwl_product(){
         margin:0,
         onTranslated:function(event){
             var page = event.page.index;     // Position of the current page
-            console.log('page',page)
+            //console.log('page',page)
             if(page ===0){
-              // console.log("牙膏")
+              console.log("牙膏")
               gtag('event', 'Click', {
                 'event_category': '不做白工促淨會',
                 'event_label': '牙膏',
               });
             }else if(page ===1){
-              // console.log("牙刷")
+              console.log("牙刷")
               gtag('event', 'Click', {
                 'event_category': '不做白工促淨會',
                 'event_label': '牙刷',
               });
             }else if(page ===2){
-              // console.log("無隱角系列牙刷")
+              console.log("無隱角系列牙刷")
               gtag('event', 'Click', {
                 'event_category': '不做白工促淨會',
                 'event_label': '無隱角系列牙刷',
               });
             }else if(page ===3){
-              // console.log("兒童專業護理牙刷")
+              console.log("兒童專業護理牙刷")
               gtag('event', 'Click', {
                 'event_category': '不做白工促淨會',
                 'event_label': '兒童專業護理牙刷',
               });
             }else if(page ===4){
-              // console.log("漱口水")
+              console.log("漱口水")
               gtag('event', 'Click', {
                 'event_category': '不做白工促淨會',
                 'event_label': '漱口水',
@@ -282,6 +303,47 @@ function setOwl_knowledge(){
       items:1,
       loop:true,
       margin:30,
+      onTranslated:function(event){
+        var page = event.page.index;     // Position of the current page
+        //console.log('page',page)
+        if(page ===0){
+          console.log("冷知識#1")
+          gtag('event', 'Click', {
+            'event_category': '不做白工促淨會',
+            'event_label': '冷知識#1',
+          });
+        }else if(page ===1){
+          console.log("冷知識#2")
+          gtag('event', 'Click', {
+            'event_category': '不做白工促淨會',
+            'event_label': '冷知識#2',
+          });
+        }else if(page ===2){
+          console.log("冷知識#3")
+          gtag('event', 'Click', {
+            'event_category': '不做白工促淨會',
+            'event_label': '冷知識#3',
+          });
+        }else if(page ===3){
+          console.log("冷知識#4")
+          gtag('event', 'Click', {
+            'event_category': '不做白工促淨會',
+            'event_label': '冷知識#4',
+          });
+        }else if(page ===4){
+          console.log("冷知識#5")
+          gtag('event', 'Click', {
+            'event_category': '不做白工促淨會',
+            'event_label': '冷知識#5',
+          });
+        }else if(page ===5){
+          console.log("冷知識#6")
+          gtag('event', 'Click', {
+            'event_category': '不做白工促淨會',
+            'event_label': '冷知識#6',
+          });
+        }
+      }
   })
   $('section.introduction .knowledgeSlider a.btn_next').on('click',function(e){
       e.preventDefault();
@@ -333,7 +395,7 @@ $(document).ready(function(){
   $('.video_action').click(function (e) { 
     e.preventDefault();
     $('html, body').animate({
-        scrollTop: $('section.videos .wrapper').offset().top - 50
+        scrollTop: $('section.videos .wrapper').offset().top - 100
     }, 800);
     $('.menu').removeClass('show');
     if (isMobileStyle) {
@@ -344,7 +406,7 @@ $(document).ready(function(){
   $('.knowledge_action').click(function (e) { 
     e.preventDefault();
     $('html, body').animate({
-        scrollTop: $('section.introduction .knowledgeSlider').offset().top - 50
+        scrollTop: $('section.introduction .knowledgeSlider').offset().top - 100
     }, 800);
     $('.menu').removeClass('show');
     if (isMobileStyle) {
@@ -355,7 +417,7 @@ $(document).ready(function(){
   $('.product_action').click(function (e) { 
     e.preventDefault();
     $('html, body').animate({
-        scrollTop: $('section.introduction .PD_slider').offset().top - 50
+        scrollTop: $('section.introduction .PD_slider').offset().top - 100
     }, 800);
     $('.menu').removeClass('show');
     if (isMobileStyle) {

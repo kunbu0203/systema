@@ -7,6 +7,12 @@ $(document).ready(function(){
       'event_label': '細潔商品頁',
     });
   });
+  $('#officialFB').click(function () {
+    gtag('event', 'Click', {
+      'event_category': '不做白工促淨會',
+      'event_label': '細潔FB',
+    });
+  });
   $('.introduction .PD_slider .bigBtn').click(function () {
     gtag('event', 'Click', {
       'event_category': '不做白工促淨會',
