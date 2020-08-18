@@ -214,31 +214,31 @@ function setOwl_product(){
             var page = event.page.index;     // Position of the current page
             //console.log('page',page)
             if(page ===0){
-              console.log("牙膏")
+              // console.log("牙膏")
               gtag('event', 'Click', {
                 'event_category': '不做白工促淨會',
                 'event_label': '牙膏',
               });
             }else if(page ===1){
-              console.log("牙刷")
+              // console.log("牙刷")
               gtag('event', 'Click', {
                 'event_category': '不做白工促淨會',
                 'event_label': '牙刷',
               });
             }else if(page ===2){
-              console.log("無隱角系列牙刷")
+              // console.log("無隱角系列牙刷")
               gtag('event', 'Click', {
                 'event_category': '不做白工促淨會',
                 'event_label': '無隱角系列牙刷',
               });
             }else if(page ===3){
-              console.log("兒童專業護理牙刷")
+              // console.log("兒童專業護理牙刷")
               gtag('event', 'Click', {
                 'event_category': '不做白工促淨會',
                 'event_label': '兒童專業護理牙刷',
               });
             }else if(page ===4){
-              console.log("漱口水")
+              // console.log("漱口水")
               gtag('event', 'Click', {
                 'event_category': '不做白工促淨會',
                 'event_label': '漱口水',
@@ -307,37 +307,37 @@ function setOwl_knowledge(){
         var page = event.page.index;     // Position of the current page
         //console.log('page',page)
         if(page ===0){
-          console.log("冷知識#1")
+          // console.log("冷知識#1")
           gtag('event', 'Click', {
             'event_category': '不做白工促淨會',
             'event_label': '冷知識#1',
           });
         }else if(page ===1){
-          console.log("冷知識#2")
+          // console.log("冷知識#2")
           gtag('event', 'Click', {
             'event_category': '不做白工促淨會',
             'event_label': '冷知識#2',
           });
         }else if(page ===2){
-          console.log("冷知識#3")
+          // console.log("冷知識#3")
           gtag('event', 'Click', {
             'event_category': '不做白工促淨會',
             'event_label': '冷知識#3',
           });
         }else if(page ===3){
-          console.log("冷知識#4")
+          // console.log("冷知識#4")
           gtag('event', 'Click', {
             'event_category': '不做白工促淨會',
             'event_label': '冷知識#4',
           });
         }else if(page ===4){
-          console.log("冷知識#5")
+          // console.log("冷知識#5")
           gtag('event', 'Click', {
             'event_category': '不做白工促淨會',
             'event_label': '冷知識#5',
           });
         }else if(page ===5){
-          console.log("冷知識#6")
+          // console.log("冷知識#6")
           gtag('event', 'Click', {
             'event_category': '不做白工促淨會',
             'event_label': '冷知識#6',
