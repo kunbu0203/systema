@@ -98,7 +98,7 @@ article .banner .wrapper {
   width: 65%;
   max-width: 1440px;
   height: 40vw;
-  max-height: 864px;
+  max-height: 886px;
   margin: auto;
   z-index: 10;
 }
@@ -126,7 +126,7 @@ article .banner .wrapper figure {
 }
 article .banner .wrapper .products {
   left: 50%;
-  bottom: 2%;
+  bottom: 1%;
   transform: translateX(-50%);
   width: 38%;
 }
@@ -153,15 +153,15 @@ article .banner .wrapper .pattern {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 58%;
-}
-article .banner .wrapper .pattern img {
-  animation: pattern 1.5s ease-out 1s infinite;
+  width: 57%;
 }
 @media only screen and (max-width: 768px) {
   article .banner .wrapper .pattern {
     width: 100%;
   }
+}
+article .banner .wrapper .pattern img {
+  animation: pattern 1.5s ease-out 1s infinite;
 }
 article .banner .wrapper .dollx2 {
   right: -7%;
