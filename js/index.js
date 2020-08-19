@@ -18,7 +18,7 @@ function preload() {
     "images/BG.jpg",
     "images/doctor.png",
     "images/dollx2.png",
-    "images/fb_share.jpg",
+    "images/fb-share.jpg",
     "images/hands.png",
     "images/knowledgeImg01.jpg",
     "images/knowledgeImg02.jpg",
