@@ -67,12 +67,6 @@ article .banner {
   background-image: url(../images/BG.jpg);
   background-size: cover;
 }
-@media only screen and (max-width: 768px) {
-  article .banner {
-    padding-top: 40px;
-    background-image: url(../images/BG_m.jpg);
-  }
-}
 article .banner:before {
   content: "";
   display: block;
@@ -88,6 +82,10 @@ article .banner:before {
   z-index: 5;
 }
 @media only screen and (max-width: 768px) {
+  article .banner {
+    padding-top: 40px;
+    background-image: url(../images/BG_m.jpg);
+  }
   article .banner:before {
     bottom: -14%;
     background-image: url(../images/BG_bottom_mb.png);
@@ -155,13 +153,13 @@ article .banner .wrapper .pattern {
   transform: translateX(-50%);
   width: 57%;
 }
+article .banner .wrapper .pattern img {
+  animation: pattern 1.5s ease-out 1s infinite;
+}
 @media only screen and (max-width: 768px) {
   article .banner .wrapper .pattern {
     width: 100%;
   }
-}
-article .banner .wrapper .pattern img {
-  animation: pattern 1.5s ease-out 1s infinite;
 }
 article .banner .wrapper .dollx2 {
   right: -7%;

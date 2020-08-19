@@ -51,9 +51,6 @@ article
 		padding-top: 60px
 		background-image: url(../images/BG.jpg)
 		background-size: cover
-		+rwd(768px)
-			padding-top: 40px
-			background-image: url(../images/BG_m.jpg)
 		&:before
 			content: ''
 			display: block
@@ -67,7 +64,10 @@ article
 			background-size: contain
 			background-position: bottom center
 			z-index: 5
-			+rwd(768px)
+		+rwd(768px)
+			padding-top: 40px
+			background-image: url(../images/BG_m.jpg)
+			&:before
 				bottom: -14%
 				background-image: url(../images/BG_bottom_mb.png)
 		.wrapper
@@ -115,10 +115,10 @@ article
 				left: 50%
 				transform: translateX(-50%)
 				width: 57%
-				+rwd(768px)
-					width: 100%
 				img
 					animation: pattern 1.5s ease-out 1s infinite
+				+rwd(768px)
+					width: 100%
 			.dollx2
 				right: -7%
 				bottom: -8%
@@ -228,8 +228,6 @@ article
 			+rwd(1024px)
 				width: 95%
 				max-width: 660px
-			+rwd(768px)
-				// width: 86%
 			.videosTitle
 				position: relative
 				width: 100%
