@@ -79,8 +79,8 @@ function resizeDo() {
   // console.log("wh:" + wh)
 
   var vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-  // document.documentElement.style.setProperty('--vh', '${'+vh+'}px');
+  // document.documentElement.style.setProperty('--vh', `${vh}px`);
+  document.documentElement.style.setProperty('--vh', '${'+vh+'}px');
 
   if ((ww <= 768) && !isMobileStyle) {
     isMobileStyle = true;
