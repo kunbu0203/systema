@@ -4,11 +4,11 @@
 
 @keyframes pattern
 	0%
-		transform: translateX(-50%) scale(1)
+		transform: scale(1)
 	50%
-		transform: translateX(-50%) scale(1.05)
+		transform: scale(1.05)
 	100%
-		transform: translateX(-50%) scale(1)
+		transform: scale(1)
 
 @keyframes arrow-down
 	0%
@@ -114,9 +114,10 @@ article
 				top: 0
 				left: 50%
 				width: 58%
-				animation: pattern 1.5s ease-out 1s infinite
 				+rwd(768px)
 					width: 100%
+				img
+					animation: pattern 1.5s ease-out 1s infinite
 			.dollx2
 				right: -7%
 				bottom: -8%
