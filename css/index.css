@@ -53,21 +53,22 @@ img {
     transform: translateY(8px);
   }
 }
-.banner .pattern img, .banner .dollx2 img, .banner .products img, .banner .doctor img {
+.banner .pattern, .banner .dollx2 img, .banner .products img, .banner .doctor img {
   opacity: 0;
 }
 
 article {
   overflow: hidden;
 }
-article .banner {
+
+.banner {
   position: relative;
   width: 100%;
   padding-top: 60px;
   background-image: url(../images/BG.jpg);
   background-size: cover;
 }
-article .banner:before {
+.banner:before {
   content: "";
   display: block;
   position: absolute;
@@ -82,16 +83,16 @@ article .banner:before {
   z-index: 5;
 }
 @media only screen and (max-width: 768px) {
-  article .banner {
+  .banner {
     padding-top: 40px;
     background-image: url(../images/BG_m.jpg);
   }
-  article .banner:before {
+  .banner:before {
     bottom: -14%;
     background-image: url(../images/BG_bottom_mb.png);
   }
 }
-article .banner .wrapper {
+.banner .wrapper {
   position: relative;
   width: 65%;
   max-width: 1440px;
@@ -101,38 +102,36 @@ article .banner .wrapper {
   z-index: 10;
 }
 @media only screen and (max-width: 1024px) {
-  article .banner .wrapper {
+  .banner .wrapper {
     width: 100%;
     max-width: 640px;
     height: 400px;
   }
 }
 @media only screen and (max-width: 768px) {
-  article .banner .wrapper {
+  .banner .wrapper {
     width: 90%;
     height: 920px;
     max-height: none;
   }
 }
 @media only screen and (max-width: 720px) {
-  article .banner .wrapper {
+  .banner .wrapper {
     height: 132vw;
   }
 }
-article .banner .wrapper figure {
+.banner .products {
   position: absolute;
-}
-article .banner .wrapper .products {
   left: 50%;
   bottom: 1%;
   transform: translateX(-50%);
   width: 38%;
 }
-article .banner .wrapper .products img:nth-of-type(2) {
+.banner .products img:nth-of-type(2) {
   display: none;
 }
 @media only screen and (max-width: 768px) {
-  article .banner .wrapper .products {
+  .banner .products {
     width: 53%;
     bottom: 0;
     left: auto;
@@ -140,92 +139,92 @@ article .banner .wrapper .products img:nth-of-type(2) {
     transform: none;
     z-index: 2;
   }
-  article .banner .wrapper .products img:nth-of-type(1) {
+  .banner .products img:nth-of-type(1) {
     display: none;
   }
-  article .banner .wrapper .products img:nth-of-type(2) {
+  .banner .products img:nth-of-type(2) {
     display: block;
   }
 }
-article .banner .wrapper .pattern {
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+.banner .pattern {
   width: 57%;
+  margin: auto;
 }
-article .banner .wrapper .pattern img {
+.banner .pattern img {
   animation: pattern 1.5s ease-out 1s infinite;
 }
 @media only screen and (max-width: 768px) {
-  article .banner .wrapper .pattern {
+  .banner .pattern {
     width: 100%;
   }
 }
-article .banner .wrapper .dollx2 {
+.banner .dollx2 {
+  position: absolute;
   right: -7%;
   bottom: -8%;
   width: 37%;
 }
 @media only screen and (max-width: 768px) {
-  article .banner .wrapper .dollx2 {
+  .banner .dollx2 {
     right: 0;
     bottom: 18%;
     width: 50%;
   }
 }
-article .banner .wrapper .doctor {
+.banner .doctor {
+  position: absolute;
   bottom: -4%;
   left: 3%;
   width: 24%;
 }
 @media only screen and (max-width: 768px) {
-  article .banner .wrapper .doctor {
+  .banner .doctor {
     width: 46%;
     bottom: 2%;
     left: 15px;
   }
 }
-article .banner .wrapper .scroll {
+.banner .scroll {
   position: absolute;
   bottom: -15%;
   left: 50%;
   transform: translateX(-50%);
 }
-article .banner .wrapper .scroll p {
+.banner .scroll p {
   text-align: center;
   font-size: 22px;
   color: #003893;
   letter-spacing: 1px;
 }
-article .banner .wrapper .scroll .scroll_arrow {
+.banner .scroll .scroll_arrow {
   width: 30%;
   margin: 5px auto 0;
   overflow: hidden;
 }
-article .banner .wrapper .scroll .scroll_arrow figure {
+.banner .scroll .scroll_arrow figure {
   position: relative;
   animation: arrow-down 2s infinite linear;
 }
 @media only screen and (max-width: 1380px) {
-  article .banner .wrapper .scroll p {
+  .banner .scroll p {
     font-size: 18px;
   }
-  article .banner .wrapper .scroll .scroll_arrow {
+  .banner .scroll .scroll_arrow {
     width: 20%;
   }
 }
 @media only screen and (max-width: 768px) {
-  article .banner .wrapper .scroll {
+  .banner .scroll {
     bottom: -13%;
   }
-  article .banner .wrapper .scroll p {
+  .banner .scroll p {
     font-size: 14px;
   }
-  article .banner .wrapper .scroll .scroll_arrow {
+  .banner .scroll .scroll_arrow {
     width: 18%;
   }
 }
-article .banner p.protect {
+.banner p.protect {
   position: absolute;
   bottom: -13%;
   left: 1%;
@@ -234,40 +233,41 @@ article .banner p.protect {
   color: #ffffff;
   z-index: 10;
 }
-article .banner p.protect:before {
+.banner p.protect:before {
   content: "*";
   display: inline-block;
   vertical-align: top;
 }
-article .banner p.protect span {
+.banner p.protect span {
   display: inline-block;
 }
 @media only screen and (max-width: 1680px) {
-  article .banner p.protect {
+  .banner p.protect {
     bottom: -15%;
   }
 }
 @media only screen and (max-width: 1024px) {
-  article .banner p.protect {
+  .banner p.protect {
     bottom: -17%;
     left: -2%;
     transform: scale(0.8);
   }
 }
 @media only screen and (max-width: 768px) {
-  article .banner p.protect {
+  .banner p.protect {
     display: none;
   }
 }
-article .banner p.protect .protect_br {
+.banner p.protect .protect_br {
   display: none;
 }
 @media only screen and (max-width: 1680px) {
-  article .banner p.protect .protect_br {
+  .banner p.protect .protect_br {
     display: block;
   }
 }
-article .videos {
+
+.profession {
   position: relative;
   width: 100%;
   padding-top: 10%;
@@ -278,23 +278,23 @@ article .videos {
   background-position: center;
 }
 @media only screen and (max-width: 1380px) {
-  article .videos {
+  .profession {
     padding-top: 12%;
   }
 }
 @media only screen and (max-width: 1024px) {
-  article .videos {
+  .profession {
     padding-top: 120px;
     padding-bottom: 55px;
   }
 }
 @media only screen and (max-width: 768px) {
-  article .videos {
+  .profession {
     padding-top: 23%;
     padding-bottom: 23%;
   }
 }
-article .videos:before {
+.profession:before {
   content: "";
   display: block;
   position: absolute;
@@ -307,55 +307,56 @@ article .videos:before {
   background-size: contain;
   background-position: bottom;
 }
-article .videos .wrapper {
+.profession .wrapper {
   width: 65%;
   max-width: 1170px;
   margin: auto;
   position: relative;
 }
 @media only screen and (max-width: 1024px) {
-  article .videos .wrapper {
+  .profession .wrapper {
     width: 95%;
     max-width: 660px;
   }
 }
-article .videos .wrapper .videosTitle {
+
+.videos .videosTitle {
   position: relative;
   width: 100%;
   z-index: 3;
 }
-article .videos .wrapper .videosTitle .videosTitle_text {
+.videos .videosTitle .videosTitle_text {
   position: absolute;
   top: 0;
   left: 0;
   display: none;
 }
-article .videos .wrapper .videosTitle .videosTitle_text:first-of-type {
+.videos .videosTitle .videosTitle_text:first-of-type {
   display: block;
 }
-article .videos .wrapper .videosTitle img:nth-of-type(2) {
+.videos .videosTitle img:nth-of-type(2) {
   display: none;
 }
 @media only screen and (max-width: 768px) {
-  article .videos .wrapper .videosTitle img:nth-of-type(1) {
+  .videos .videosTitle img:nth-of-type(1) {
     display: none;
   }
-  article .videos .wrapper .videosTitle img:nth-of-type(2) {
+  .videos .videosTitle img:nth-of-type(2) {
     display: block;
   }
 }
-article .videos .wrapper .videoSlider {
+.videos .videoSlider {
   width: 90%;
   margin: auto;
   margin-top: -0.8%;
 }
 @media only screen and (max-width: 768px) {
-  article .videos .wrapper .videoSlider {
+  .videos .videoSlider {
     width: 86%;
     margin-top: -1.8%;
   }
 }
-article .videos .wrapper .videoSlider .videoWrapper {
+.videos .videoSlider .videoWrapper {
   position: relative;
   box-sizing: border-box;
   border-radius: 30px;
@@ -363,86 +364,87 @@ article .videos .wrapper .videoSlider .videoWrapper {
   overflow: hidden;
 }
 @media only screen and (max-width: 768px) {
-  article .videos .wrapper .videoSlider .videoWrapper {
+  .videos .videoSlider .videoWrapper {
     border-radius: 8px;
     border: 5px solid #ffffff;
   }
 }
-article .videos .wrapper .videoSlider .videoWrapper .videoContent {
+.videos .videoSlider .videoWrapper .videoContent {
   position: relative;
   padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
 }
-article .videos .wrapper .videoSlider .videoWrapper .videoContent iframe {
+.videos .videoSlider .videoWrapper .videoContent iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
-article .videos .wrapper .videoSlider .videoWrapper .owl-dots {
+.videos .videoSlider .videoWrapper .owl-dots {
   display: none;
 }
-article .videos .wrapper .videoSlider .btn_prev {
+.videos .videoSlider .btn_prev {
   top: 58%;
   left: -5%;
 }
 @media only screen and (max-width: 768px) {
-  article .videos .wrapper .videoSlider .btn_prev {
+  .videos .videoSlider .btn_prev {
     top: 63%;
     left: 0;
   }
 }
 @media only screen and (max-width: 480px) {
-  article .videos .wrapper .videoSlider .btn_prev {
+  .videos .videoSlider .btn_prev {
     bottom: -65%;
   }
 }
-article .videos .wrapper .videoSlider .btn_next {
+.videos .videoSlider .btn_next {
   top: 58%;
   right: -5%;
 }
 @media only screen and (max-width: 768px) {
-  article .videos .wrapper .videoSlider .btn_next {
+  .videos .videoSlider .btn_next {
     top: 63%;
     right: 0;
   }
 }
 @media only screen and (max-width: 480px) {
-  article .videos .wrapper .videoSlider .btn_next {
+  .videos .videoSlider .btn_next {
     bottom: -65%;
   }
 }
-article .videos .wrapper .videoSlider .man {
+.videos .videoSlider .man {
   width: 10%;
   position: absolute;
   left: -3%;
   bottom: 0;
 }
 @media only screen and (max-width: 768px) {
-  article .videos .wrapper .videoSlider .man {
+  .videos .videoSlider .man {
     width: 19%;
     left: 0;
     bottom: -18%;
     z-index: 2;
   }
 }
-article .videos .wrapper .videoSlider .woman {
+.videos .videoSlider .woman {
   width: 8%;
   position: absolute;
   right: -2%;
   bottom: 0;
 }
 @media only screen and (max-width: 768px) {
-  article .videos .wrapper .videoSlider .woman {
+  .videos .videoSlider .woman {
     width: 15%;
     right: 0;
     bottom: -16%;
     z-index: 2;
   }
 }
-article .introduction {
+
+.introduction {
   width: 100%;
   padding: 5% 0;
   background: linear-gradient(45deg, #fff 1.5%, #e5ebf4 0, #e5ebf4 48.5%, #fff 0, #fff 51.5%, #e5ebf4 0, #e5ebf4 98.5%, #fff 0);
@@ -450,63 +452,63 @@ article .introduction {
   background-repeat: repeat;
 }
 @media only screen and (max-width: 768px) {
-  article .introduction {
+  .introduction {
     padding: 15% 0;
   }
 }
-article .introduction .wrapper {
+.introduction .wrapper {
   width: 70%;
   max-width: 1170px;
   margin: auto;
 }
 @media only screen and (max-width: 1024px) {
-  article .introduction .wrapper {
+  .introduction .wrapper {
     width: 95%;
     max-width: 640px;
   }
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper {
+  .introduction .wrapper {
     width: 100%;
     overflow: hidden;
   }
 }
-article .introduction .wrapper .knowledgeSlider {
+.introduction .wrapper .knowledgeSlider {
   position: relative;
   padding-bottom: 10%;
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .knowledgeSlider {
+  .introduction .wrapper .knowledgeSlider {
     padding-bottom: 15%;
   }
 }
-article .introduction .wrapper .knowledgeSlider .knowledgeTitle {
+.introduction .wrapper .knowledgeSlider .knowledgeTitle {
   width: 45%;
   max-width: 534px;
   margin: auto;
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .knowledgeSlider .knowledgeTitle {
+  .introduction .wrapper .knowledgeSlider .knowledgeTitle {
     width: 75%;
   }
 }
-article .introduction .wrapper .knowledgeSlider .knowledgeContent {
+.introduction .wrapper .knowledgeSlider .knowledgeContent {
   position: relative;
   width: 100%;
   margin-top: -30px;
   font-size: 0;
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .knowledgeSlider .knowledgeContent {
+  .introduction .wrapper .knowledgeSlider .knowledgeContent {
     width: 90%;
     margin: -20px auto 0 auto;
   }
 }
-article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .owl-item {
+.introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .owl-item {
   padding: 10px;
   box-sizing: border-box;
 }
-article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge {
+.introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge {
   position: relative;
   text-align: right;
   padding-right: 3%;
@@ -514,13 +516,13 @@ article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrap
   box-sizing: border-box;
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge {
+  .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge {
     text-align: left;
     padding-right: 0;
     margin-bottom: 5%;
   }
 }
-article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeBG {
+.introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeBG {
   width: 97%;
   height: 95%;
   position: absolute;
@@ -530,7 +532,7 @@ article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrap
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeBG {
+  .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeBG {
     width: 90%;
     height: 100%;
     left: 50%;
@@ -538,7 +540,7 @@ article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrap
     transform: translateX(-50%);
   }
 }
-article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .contentBG {
+.introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .contentBG {
   position: absolute;
   width: 52%;
   padding-bottom: 42%;
@@ -549,11 +551,11 @@ article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrap
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .contentBG {
+  .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .contentBG {
     display: none;
   }
 }
-article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeImg {
+.introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeImg {
   width: 48%;
   display: inline-block;
   vertical-align: middle;
@@ -561,12 +563,12 @@ article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrap
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeImg {
+  .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeImg {
     width: 90%;
     z-index: 50;
   }
 }
-article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt {
+.introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt {
   width: 52%;
   padding: 0 10% 0 10%;
   position: absolute;
@@ -577,17 +579,17 @@ article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrap
   text-align: center;
 }
 @media only screen and (max-width: 1800px) {
-  article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt {
+  .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt {
     padding: 0 8% 0 8%;
   }
 }
 @media only screen and (max-width: 1240px) {
-  article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt {
+  .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt {
     top: 12%;
   }
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt {
+  .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt {
     width: 90%;
     position: relative;
     background-color: #ffffff;
@@ -597,25 +599,25 @@ article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrap
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   }
 }
-article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt h5 {
+.introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt h5 {
   font-size: 16px;
 }
 @media only screen and (max-width: 1540px) {
-  article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt h5 {
+  .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt h5 {
     font-size: 14px;
   }
 }
 @media only screen and (max-width: 1640px) {
-  article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt h5 {
+  .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt h5 {
     font-size: 12px;
   }
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt h5 {
+  .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt h5 {
     transform: scale(0.9);
   }
 }
-article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt h4 {
+.introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt h4 {
   font-size: 32px;
   line-height: 1.35;
   padding: 10px 0;
@@ -624,143 +626,143 @@ article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrap
   border-bottom: 1px solid #003893;
 }
 @media only screen and (max-width: 1540px) {
-  article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt h4 {
+  .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt h4 {
     margin: 15px 0;
     font-size: 26px;
   }
 }
 @media only screen and (max-width: 1280px) {
-  article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt h4 {
+  .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt h4 {
     margin: 10px 0;
     font-size: 20px;
   }
 }
 @media only screen and (max-width: 1024px) {
-  article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt h4 {
+  .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt h4 {
     margin: 10px 0;
     padding: 5px 0;
     font-size: 18px;
   }
 }
-article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt p {
+.introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt p {
   font-size: 22px;
   line-height: 1.5;
   color: #333333;
   text-align: left;
 }
 @media only screen and (max-width: 1540px) {
-  article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt p {
+  .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt p {
     font-size: 20px;
   }
 }
 @media only screen and (max-width: 1280px) {
-  article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt p {
+  .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt p {
     font-size: 16px;
   }
 }
 @media only screen and (max-width: 1024px) {
-  article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt p {
+  .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt p {
     font-size: 14px;
   }
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt p {
+  .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt p {
     font-size: 13px;
   }
 }
-article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .owl-dots {
+.introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .owl-dots {
   margin-top: 0;
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .owl-dots {
+  .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .owl-dots {
     margin-top: 6%;
   }
 }
-article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .owl-dots span {
+.introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .owl-dots span {
   background: #003893;
   opacity: 0.5;
 }
 @media only screen and (max-width: 360px) {
-  article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .owl-dots span {
+  .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .owl-dots span {
     width: 7px;
     height: 7px;
     margin: 5px;
   }
 }
-article .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .owl-dots .owl-dot.active span {
+.introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .owl-dots .owl-dot.active span {
   opacity: 1;
 }
-article .introduction .wrapper .knowledgeSlider .knowledgeContent .btn_prev {
+.introduction .wrapper .knowledgeSlider .knowledgeContent .btn_prev {
   top: 40%;
   left: -8%;
 }
 @media only screen and (max-width: 1280px) {
-  article .introduction .wrapper .knowledgeSlider .knowledgeContent .btn_prev {
+  .introduction .wrapper .knowledgeSlider .knowledgeContent .btn_prev {
     left: -10%;
   }
 }
 @media only screen and (max-width: 1024px) {
-  article .introduction .wrapper .knowledgeSlider .knowledgeContent .btn_prev {
+  .introduction .wrapper .knowledgeSlider .knowledgeContent .btn_prev {
     left: -7%;
   }
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .knowledgeSlider .knowledgeContent .btn_prev {
+  .introduction .wrapper .knowledgeSlider .knowledgeContent .btn_prev {
     top: auto;
     bottom: 0;
     left: -3%;
   }
 }
-article .introduction .wrapper .knowledgeSlider .knowledgeContent .btn_next {
+.introduction .wrapper .knowledgeSlider .knowledgeContent .btn_next {
   top: 40%;
   right: -8%;
 }
 @media only screen and (max-width: 1280px) {
-  article .introduction .wrapper .knowledgeSlider .knowledgeContent .btn_next {
+  .introduction .wrapper .knowledgeSlider .knowledgeContent .btn_next {
     right: -10%;
   }
 }
 @media only screen and (max-width: 1024px) {
-  article .introduction .wrapper .knowledgeSlider .knowledgeContent .btn_next {
+  .introduction .wrapper .knowledgeSlider .knowledgeContent .btn_next {
     right: -7%;
   }
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .knowledgeSlider .knowledgeContent .btn_next {
+  .introduction .wrapper .knowledgeSlider .knowledgeContent .btn_next {
     top: auto;
     bottom: 0;
     right: -3%;
   }
 }
-article .introduction .wrapper .PD_slider {
+.introduction .wrapper .PD_slider {
   position: relative;
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .PD_slider {
+  .introduction .wrapper .PD_slider {
     width: 90%;
     margin: auto;
   }
 }
-article .introduction .wrapper .PD_slider .BG_slider {
+.introduction .wrapper .PD_slider .BG_slider {
   position: relative;
   transform-origin: left;
   transform: skewY(-4.5deg);
 }
-article .introduction .wrapper .PD_slider .BG_slider img:nth-of-type(2) {
+.introduction .wrapper .PD_slider .BG_slider img:nth-of-type(2) {
   display: none;
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .PD_slider .BG_slider img:nth-of-type(1) {
+  .introduction .wrapper .PD_slider .BG_slider img:nth-of-type(1) {
     display: none;
   }
-  article .introduction .wrapper .PD_slider .BG_slider img:nth-of-type(2) {
+  .introduction .wrapper .PD_slider .BG_slider img:nth-of-type(2) {
     display: block;
   }
 }
-article .introduction .wrapper .PD_slider .BG_slider:before {
+.introduction .wrapper .PD_slider .BG_slider:before {
   content: "";
   display: block;
   position: absolute;
@@ -771,13 +773,13 @@ article .introduction .wrapper .PD_slider .BG_slider:before {
   background-color: #d60067;
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .PD_slider .BG_slider:before {
+  .introduction .wrapper .PD_slider .BG_slider:before {
     right: -10%;
     top: 4%;
     height: 1%;
   }
 }
-article .introduction .wrapper .PD_slider .BG_slider:after {
+.introduction .wrapper .PD_slider .BG_slider:after {
   content: "";
   display: block;
   position: absolute;
@@ -788,13 +790,13 @@ article .introduction .wrapper .PD_slider .BG_slider:after {
   background-color: #d60067;
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .PD_slider .BG_slider:after {
+  .introduction .wrapper .PD_slider .BG_slider:after {
     right: -10%;
     bottom: 4%;
     height: 1%;
   }
 }
-article .introduction .wrapper .PD_slider .product_wrapper {
+.introduction .wrapper .PD_slider .product_wrapper {
   width: 85%;
   position: absolute;
   left: 50%;
@@ -802,45 +804,45 @@ article .introduction .wrapper .PD_slider .product_wrapper {
   transform: translate(-50%, -50%);
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .PD_slider .product_wrapper {
+  .introduction .wrapper .PD_slider .product_wrapper {
     width: 90%;
     left: 50%;
     top: 0;
     transform: translate(-50%, 8%);
   }
 }
-article .introduction .wrapper .PD_slider .product_wrapper .product {
+.introduction .wrapper .PD_slider .product_wrapper .product {
   font-size: 0;
 }
-article .introduction .wrapper .PD_slider .product_wrapper .product .product_img {
+.introduction .wrapper .PD_slider .product_wrapper .product .product_img {
   width: 45%;
   display: inline-block;
   vertical-align: top;
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_img {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_img {
     width: 85%;
     display: block;
     margin: auto;
   }
 }
 @media only screen and (max-width: 360px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_img {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_img {
     width: 80%;
   }
 }
-article .introduction .wrapper .PD_slider .product_wrapper .product .product_img img:nth-of-type(2) {
+.introduction .wrapper .PD_slider .product_wrapper .product .product_img img:nth-of-type(2) {
   display: none;
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_img img:nth-of-type(1) {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_img img:nth-of-type(1) {
     display: none;
   }
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_img img:nth-of-type(2) {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_img img:nth-of-type(2) {
     display: block;
   }
 }
-article .introduction .wrapper .PD_slider .product_wrapper .product .product_content {
+.introduction .wrapper .PD_slider .product_wrapper .product .product_content {
   width: 55%;
   display: inline-block;
   padding: 0 0 0 2%;
@@ -849,98 +851,98 @@ article .introduction .wrapper .PD_slider .product_wrapper .product .product_con
   position: relative;
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content {
     width: 100%;
     padding: 5% 0 0 3%;
     box-sizing: border-box;
   }
 }
 @media only screen and (max-width: 768px) and (max-width: 360px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content {
     padding: 10% 0 0 3%;
   }
 }
-article .introduction .wrapper .PD_slider .product_wrapper .product .product_content #toothbrushX3 {
+.introduction .wrapper .PD_slider .product_wrapper .product .product_content #toothbrushX3 {
   padding: 0 0 0 3%;
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content #toothbrushX3 {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content #toothbrushX3 {
     padding: 0;
   }
 }
-article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt h4 {
+.introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt h4 {
   font-size: 32px;
   color: #003893;
 }
 @media only screen and (max-width: 1540px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt h4 {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt h4 {
     font-size: 28px;
   }
 }
 @media only screen and (max-width: 1380px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt h4 {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt h4 {
     font-size: 26px;
   }
 }
 @media only screen and (max-width: 1240px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt h4 {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt h4 {
     font-size: 18px;
   }
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt h4 {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt h4 {
     font-size: 32px;
   }
 }
 @media only screen and (max-width: 560px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt h4 {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt h4 {
     font-size: 28px;
   }
 }
 @media only screen and (max-width: 480px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt h4 {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt h4 {
     font-size: 22px;
   }
 }
 @media only screen and (max-width: 400px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt h4 {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt h4 {
     font-size: 17px;
   }
 }
 @media only screen and (max-width: 360px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt h4 {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt h4 {
     font-size: 15px;
   }
 }
-article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 {
+.introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 {
   padding: 15px 0;
 }
 @media only screen and (max-width: 1540px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 {
     padding: 10px 0;
   }
 }
 @media only screen and (max-width: 1240px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 {
     padding: 7px 0;
   }
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 {
     padding: 15px 0;
   }
 }
 @media only screen and (max-width: 480px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 {
     padding: 10px 0;
   }
 }
 @media only screen and (max-width: 400px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 {
     padding: 6px 0;
   }
 }
-article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 img {
+.introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 img {
   width: auto;
   height: 62px;
   display: inline-block;
@@ -948,154 +950,154 @@ article .introduction .wrapper .PD_slider .product_wrapper .product .product_con
   padding-right: 7px;
 }
 @media only screen and (max-width: 1540px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 img {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 img {
     height: 54px;
   }
 }
 @media only screen and (max-width: 1240px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 img {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 img {
     height: 40px;
   }
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 img {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 img {
     height: 62px;
   }
 }
 @media only screen and (max-width: 560px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 img {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 img {
     height: 48px;
   }
 }
 @media only screen and (max-width: 480px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 img {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 img {
     height: 42px;
   }
 }
 @media only screen and (max-width: 400px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 img {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 img {
     height: 35px;
   }
 }
 @media only screen and (max-width: 360px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 img {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 img {
     height: 32px;
   }
 }
-article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 h3 {
+.introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 h3 {
   font-size: 60px;
   color: #d60067;
   display: inline-block;
   vertical-align: text-bottom;
 }
 @media only screen and (max-width: 1540px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 h3 {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 h3 {
     font-size: 52px;
   }
 }
 @media only screen and (max-width: 1380px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 h3 {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 h3 {
     font-size: 46px;
   }
 }
 @media only screen and (max-width: 1240px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 h3 {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 h3 {
     font-size: 38px;
   }
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 h3 {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 h3 {
     font-size: 60px;
   }
 }
 @media only screen and (max-width: 560px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 h3 {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 h3 {
     font-size: 46px;
   }
 }
 @media only screen and (max-width: 480px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 h3 {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 h3 {
     font-size: 40px;
   }
 }
 @media only screen and (max-width: 400px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 h3 {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 h3 {
     font-size: 32px;
   }
 }
 @media only screen and (max-width: 360px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 h3 {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt .product_logo02 h3 {
     font-size: 28px;
   }
 }
-article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt ul {
+.introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt ul {
   margin-left: 38px;
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt ul {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt ul {
     margin-left: 30px;
   }
 }
-article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt ul li {
+.introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt ul li {
   font-size: 22px;
   line-height: 1.5;
   list-style-type: circle;
   color: #333333;
 }
 @media only screen and (max-width: 1540px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt ul li {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt ul li {
     font-size: 18px;
   }
 }
 @media only screen and (max-width: 1240px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt ul li {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt ul li {
     font-size: 14px;
   }
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt ul li {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt ul li {
     font-size: 22px;
   }
 }
 @media only screen and (max-width: 560px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt ul li {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt ul li {
     font-size: 18px;
   }
 }
 @media only screen and (max-width: 480px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt ul li {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt ul li {
     font-size: 14px;
   }
 }
 @media only screen and (max-width: 360px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt ul li {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt ul li {
     font-size: 12px;
   }
 }
-article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt ul li p {
+.introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt ul li p {
   font-size: 16px;
 }
 @media only screen and (max-width: 1380px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt ul li p {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt ul li p {
     font-size: 12px;
   }
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt ul li p {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt ul li p {
     font-size: 16px;
   }
 }
 @media only screen and (max-width: 560px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt ul li p {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt ul li p {
     font-size: 12px;
   }
 }
 @media only screen and (max-width: 360px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt ul li p {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content .txt ul li p {
     transform: scale(0.9);
   }
 }
-article .introduction .wrapper .PD_slider .product_wrapper .product .feature {
+.introduction .wrapper .PD_slider .product_wrapper .product .feature {
   width: 55%;
   font-size: 0;
   position: absolute;
@@ -1104,24 +1106,24 @@ article .introduction .wrapper .PD_slider .product_wrapper .product .feature {
   text-align: right;
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .feature {
+  .introduction .wrapper .PD_slider .product_wrapper .product .feature {
     width: 55%;
     padding-bottom: 58.1%;
     position: relative;
     margin: 4% auto 0 auto;
   }
 }
-article .introduction .wrapper .PD_slider .product_wrapper .product .feature figure {
+.introduction .wrapper .PD_slider .product_wrapper .product .feature figure {
   width: 33%;
   display: inline-block;
   padding: 2%;
   box-sizing: border-box;
 }
-article .introduction .wrapper .PD_slider .product_wrapper .product .feature figure:nth-of-type(3) {
+.introduction .wrapper .PD_slider .product_wrapper .product .feature figure:nth-of-type(3) {
   padding-right: 0;
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .feature figure {
+  .introduction .wrapper .PD_slider .product_wrapper .product .feature figure {
     width: 100%;
     padding: 0 5%;
     position: absolute;
@@ -1129,117 +1131,117 @@ article .introduction .wrapper .PD_slider .product_wrapper .product .feature fig
     left: 0;
     display: none;
   }
-  article .introduction .wrapper .PD_slider .product_wrapper .product .feature figure:nth-of-type(1) {
+  .introduction .wrapper .PD_slider .product_wrapper .product .feature figure:nth-of-type(1) {
     display: block;
   }
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .feature.toothbrushX3 {
+  .introduction .wrapper .PD_slider .product_wrapper .product .feature.toothbrushX3 {
     margin: 8% auto 0 auto;
   }
 }
-article .introduction .wrapper .PD_slider .product_wrapper .product .product_content.toothbrush {
+.introduction .wrapper .PD_slider .product_wrapper .product .product_content.toothbrush {
   width: 63%;
   margin-left: -8%;
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content.toothbrush {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content.toothbrush {
     margin-left: 0;
     width: 100%;
   }
 }
-article .introduction .wrapper .PD_slider .product_wrapper .product .product_content.children {
+.introduction .wrapper .PD_slider .product_wrapper .product .product_content.children {
   width: 100%;
   padding: 2.5%;
   position: absolute;
   top: 0;
   left: 0;
 }
-article .introduction .wrapper .PD_slider .product_wrapper .product .product_content.children .txt {
+.introduction .wrapper .PD_slider .product_wrapper .product .product_content.children .txt {
   width: 70%;
   display: inline-block;
   vertical-align: middle;
 }
-article .introduction .wrapper .PD_slider .product_wrapper .product .product_content.children .txt span {
+.introduction .wrapper .PD_slider .product_wrapper .product .product_content.children .txt span {
   display: inline-block;
 }
-article .introduction .wrapper .PD_slider .product_wrapper .product .product_content.children .award {
+.introduction .wrapper .PD_slider .product_wrapper .product .product_content.children .award {
   width: 30%;
   display: inline-block;
   vertical-align: middle;
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content.children {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content.children {
     position: relative;
   }
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content.children .txt {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content.children .txt {
     width: 100%;
   }
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_content.children .award {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_content.children .award {
     width: 55%;
     padding-bottom: 3%;
   }
 }
-article .introduction .wrapper .PD_slider .product_wrapper .product .product_img.children {
+.introduction .wrapper .PD_slider .product_wrapper .product .product_img.children {
   width: 60%;
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .product_img.children {
+  .introduction .wrapper .PD_slider .product_wrapper .product .product_img.children {
     width: 88%;
   }
 }
-article .introduction .wrapper .PD_slider .product_wrapper .product .feature.children figure {
+.introduction .wrapper .PD_slider .product_wrapper .product .feature.children figure {
   width: 34%;
 }
-article .introduction .wrapper .PD_slider .product_wrapper .product .feature.children figure:nth-of-type(3) {
+.introduction .wrapper .PD_slider .product_wrapper .product .feature.children figure:nth-of-type(3) {
   padding-right: 2%;
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .PD_slider .product_wrapper .product .feature.children figure {
+  .introduction .wrapper .PD_slider .product_wrapper .product .feature.children figure {
     width: 100%;
   }
 }
-article .introduction .wrapper .PD_slider .btn_prev {
+.introduction .wrapper .PD_slider .btn_prev {
   top: 40%;
   left: -8%;
 }
 @media only screen and (max-width: 1280px) {
-  article .introduction .wrapper .PD_slider .btn_prev {
+  .introduction .wrapper .PD_slider .btn_prev {
     left: -10%;
   }
 }
 @media only screen and (max-width: 1024px) {
-  article .introduction .wrapper .PD_slider .btn_prev {
+  .introduction .wrapper .PD_slider .btn_prev {
     left: -7%;
   }
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .PD_slider .btn_prev {
+  .introduction .wrapper .PD_slider .btn_prev {
     top: 34%;
     left: -3%;
   }
 }
-article .introduction .wrapper .PD_slider .btn_next {
+.introduction .wrapper .PD_slider .btn_next {
   top: 40%;
   right: -8%;
 }
 @media only screen and (max-width: 1280px) {
-  article .introduction .wrapper .PD_slider .btn_next {
+  .introduction .wrapper .PD_slider .btn_next {
     right: -10%;
   }
 }
 @media only screen and (max-width: 1024px) {
-  article .introduction .wrapper .PD_slider .btn_next {
+  .introduction .wrapper .PD_slider .btn_next {
     right: -7%;
   }
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .PD_slider .btn_next {
+  .introduction .wrapper .PD_slider .btn_next {
     top: 34%;
     right: -3%;
   }
 }
-article .introduction .wrapper .PD_slider .bigBtn {
+.introduction .wrapper .PD_slider .bigBtn {
   width: 45%;
   position: absolute;
   left: 0;
@@ -1253,7 +1255,7 @@ article .introduction .wrapper .PD_slider .bigBtn {
   animation: click 1s infinite linear;
 }
 @media only screen and (max-width: 768px) {
-  article .introduction .wrapper .PD_slider .bigBtn {
+  .introduction .wrapper .PD_slider .bigBtn {
     width: 90%;
     bottom: 2%;
   }

@@ -107,7 +107,7 @@ function doAnimate(){
 
     // build scene
     var scene = new ScrollMagic.Scene({
-      triggerElement: ".videos",
+      triggerElement: ".profession",
     //   duration: 500,
       offset: 0, //指標位移
       triggerHook: 0, // 觸發位置 0-1,onLeave,onCenter,onEnter
@@ -120,13 +120,13 @@ function doAnimate(){
 
     // part01 start--------------------------
     
-    TweenMax.set('.banner .pattern img', {x:0,y:-50,scale:1.5,opacity:0})
+    TweenMax.set('.banner .pattern', {x:0,y:-50,scale:1.5,opacity:0})
     TweenMax.set('.banner .doctor img', {y:100,opacity:0})
     TweenMax.set('.banner .products img', {y:100,opacity:0,delay:-.5})
     TweenMax.set('.banner .dollx2 img', {y:100,opacity:0,delay:-.5})
 
     var tween1 = new TimelineMax()
-    .add(TweenMax.to('.banner .pattern img', .5, {x:0,y:0,scale:1,opacity:1}))
+    .add(TweenMax.to('.banner .pattern', .5, {x:0,y:0,scale:1,opacity:1}))
     .add(TweenMax.to('.banner .doctor img', .5, {y:0,opacity:1}))
     .add(TweenMax.to('.banner .products img', .5, {y:0,opacity:1,delay:-.5}))
     .add(TweenMax.to('.banner .dollx2 img', .5, {y:0,opacity:1,delay:-.5}))
@@ -280,12 +280,12 @@ function setOwl_video(){
         }
     }
   })
-  $('section.videos  a.btn_next').on('click',function(e){
+  $('.videos  a.btn_next').on('click',function(e){
       e.preventDefault();
       owl.trigger('next.owl.carousel');
   })
 
-  $('section.videos  a.btn_prev').on('click',function(e){
+  $('.videos  a.btn_prev').on('click',function(e){
       e.preventDefault();
       owl.trigger('prev.owl.carousel');
   })
@@ -395,7 +395,7 @@ $(document).ready(function(){
   $('.video_action').click(function (e) { 
     e.preventDefault();
     $('html, body').animate({
-        scrollTop: $('section.videos .wrapper').offset().top - 100
+        scrollTop: $('.videos .wrapper').offset().top - 100
     }, 800);
     $('.menu').removeClass('show');
     if (isMobileStyle) {
