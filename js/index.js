@@ -55,7 +55,7 @@ function preload() {
     }, 500);
     setTimeout(function () {
         doAnimate();
-    }, 700);
+    }, 750);
   });
   queue.on("error", function (event) {
     console.log('Error');
