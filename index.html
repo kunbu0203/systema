@@ -102,41 +102,74 @@
         <div class="exam">
           <div class="wrapper">
             <div class="examTitle">
-              大會考
-              <img src="" alt="">
+              <img src="./images/exam_title.png" alt="">
             </div>
             <div class="examContent">
-              <div class="examItem examIndex">
-                <div class="peopleNum">觀看人數：<span></span></div>
-                <div class="description">一起來參加</div>
-                <div class="message">有機會</div>
+              <div class="examBg">
+                <img src="./images/blackboard.png" alt="">
+              </div>
+              <div class="examItem examIndex" style="display: none;">
+                <div class="visits">
+                  <img class="visits01" src="./images/exam_text_visits01.png" alt="">
+                  <span>3987</span>
+                  <img class="visits02" src="./images/exam_text_visits02.png" alt="">
+                </div>
+                <div class="description">
+                  全球陷入前所未有的危機！高達80%的人都染上牙周病！<br>
+                  齒科指揮中心部長Dr.愛齦舒坦邀你一起團結對抗<br>
+                  即刻接受挑戰回答問題，答對就能打敗牙菌斑<br>
+                  和博士一起解救全人類的口腔健康吧！
+                </div>
+                <div class="message">
+                  <img src="./images/exam_msg_coupon.png" alt="">
+                </div>
+                <div class="doctor">
+                  <img src="./images/exam_doctor.png" alt="">
+                </div>
+                <div class="eraser">
+                  <img src="./images/eraser.png" alt="">
+                </div>
               </div>
               <div class="examItem examQA" style="display: none;">
-                <div class="question"></div>
+                <div class="question">
+                  <span class="number">
+                    <img src="./images/exam_Q4.png" alt="">
+                  </span>
+                  <span class="text"></span>
+                </div>
                 <div class="answers">
-                  <ul>
-                      <li>
-                        <a href="#" class="answer" data-answer="0"></a>
-                      </li>
-                      <li>
-                        <a href="#" class="answer" data-answer="1"></a>
-                      </li>
-                      <li>
-                        <a href="#" class="answer" data-answer="2"></a>
-                      </li>
-                    </ul>
+                  <a href="#" class="answer" data-answer="0">
+                    <span>A.</span>
+                    <span class="text"></span>
+                  </a>
+                  <a href="#" class="answer" data-answer="1">
+                    <span>B.</span>
+                    <span class="text"></span>
+                  </a>
+                  <a href="#" class="answer" data-answer="2">
+                    <span>C.</span>
+                    <span class="text"></span>
+                  </a>
+                </div>
+                <div class="doctor">
+                  <img src="./images/exam_doctor02.png" alt="">
+                </div>
+                <div class="eraser">
+                  <img src="./images/eraser.png" alt="">
                 </div>
               </div>
-              <div class="examItem examResult" style="display: none;">
-                <div class="examItem correct" style="display: none;">
-                  <div class="head">恭喜你答對</div>
+              <div class="examItem examResult">
+                <div class="resultItem correct">
+                  <div class="head">
+                    <img src="./images/exam_text_correct.png" alt="">
+                  </div>
                   <div class="content"></div>
                 </div>
-                <div class="examItem wrong" style="display: none;">
+                <div class="resultItem wrong" style="display: none;">
                   <div class="head">答錯摟</div>
                   <div class="content">下題試試</div>
                 </div>
-                <div class="examItem allWrong" style="display: none;">
+                <div class="resultItem allWrong" style="display: none;">
                   <div class="head">哎呀</div>
                   <div class="content">題目做完了</div>
                 </div>
@@ -157,29 +190,37 @@
               </div>
             </div>
             <div class="examAction">
-              <div class="examItem examIndex">
-                <a href="#" class="start">立即挑戰</a>
-                <a href="" class="review">複習考題</a>
+              <div class="examItem examIndex" style="display: none;">
+                <a href="#" class="examBtn start">
+                  <img src="./images/btn_start.png" alt="">
+                </a>
+                <a href="#" class="examBtn review">
+                  <img src="./images/btn_review.png" alt="">
+                </a>
               </div>
               <div class="examItem examQA" style="display: none;">
-                <a href="" class="tip">溫馨提示</a>
+                <a href="" class="examBtn tip">
+                  <img src="./images/btn_tip.png" alt="">
+                </a>
               </div>
-              <div class="examItem examResult" style="display: none;">
-                <div class="examItem correct" style="display: none;">
-                  <a href="#" class="getCoupon">領取獎勵</a>
+              <div class="examItem examResult">
+                <div class="resultItem correct">
+                  <a href="#" class="examBtn getCoupon">
+                    <img src="./images/btn_coupon.png" alt="">
+                  </a>
                 </div>
-                <div class="examItem wrong" style="display: none;">
-                  <a href="#" class="nextQ">繼續作答</a>
-                  <a href="#" class="review">我要複習</a>
+                <div class="resultItem wrong" style="display: none;">
+                  <a href="#" class="examBtn nextQ">繼續作答</a>
+                  <a href="#" class="examBtn review">我要複習</a>
                 </div>
-                <div class="examItem allWrong" style="display: none;">
-                  <a href="#" class="review">帶你複習</a>
-                  <a href="#" class="tryAgain">再挑戰</a>
+                <div class="resultItem allWrong" style="display: none;">
+                  <a href="#" class="examBtn review">帶你複習</a>
+                  <a href="#" class="examBtn tryAgain">再挑戰</a>
                 </div>
               </div>
               <div class="examItem examCoupon" style="display: none;">
-                <a href="#" class="lionOnlineShop">獅王線上購物</a>
-                <a href="#" class="tryAgain">再玩一次</a>
+                <a href="#" class="examBtn lionOnlineShop">獅王線上購物</a>
+                <a href="#" class="examBtn tryAgain">再玩一次</a>
               </div>
             </div>
             

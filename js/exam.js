@@ -110,14 +110,15 @@ var question =[
 ];
 var qNum = 0;
 function enterText(qNum){
-	$('.question').text(question[qNum].title);
+	$('.question .text').text(question[qNum].title);
 	for (var i=0; i<question[qNum].answer.length; i++) {
-		$('.answer').eq(i).text(question[qNum].answer[i].text);
+		$('.answer .text').eq(i).text(question[qNum].answer[i].text);
 	}
 }
+enterText(qNum);
+
 $('.start').click(function (e) { 
 	e.preventDefault();
-	enterText(qNum);
 	$('.examItem').css('display','none');
 	$('.examQA').css('display','block');
 });
