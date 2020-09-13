@@ -146,14 +146,14 @@ function doAnimate(){
 
     // part02 start--------------------------
 
-    TweenMax.set('.videos .wrapper', {y:100,opacity:0})
+    TweenMax.set('.exam .wrapper', {y:100,opacity:0})
 
     var tween2 = new TimelineMax()
-    .add(TweenMax.to('.videos .wrapper', .5, {y:0,opacity:1}))
+    .add(TweenMax.to('.exam .wrapper', .5, {y:0,opacity:1, onComplete:setNum}));
 
     // build scene
     var scene2 = new ScrollMagic.Scene({
-      triggerElement: ".videos",
+      triggerElement: ".exam",
     //   duration: 500,
       offset: 200, //指標位移
       triggerHook: .5, // 觸發位置 0-1,onLeave,onCenter,onEnter

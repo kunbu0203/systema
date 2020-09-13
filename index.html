@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/css_reset.css"/>
     <link rel="stylesheet" href="./css/common.css"/>
     <link rel="stylesheet" href="./css/index.css"/>
+    <link rel="stylesheet" href="./css/exam.css">
     <link rel="icon" href="./images/ico.ico" type="image/ico"/>
 
     <meta name="keywords" content=""/>
@@ -108,10 +109,9 @@
               <div class="examBg">
                 <img src="./images/blackboard.png" alt="">
               </div>
-              <div class="examItem examIndex" style="display: none;">
+              <div class="examItem examIndex">
                 <div class="visits">
                   <img class="visits01" src="./images/exam_text_visits01.png" alt="">
-                  <span>3987</span>
                   <img class="visits02" src="./images/exam_text_visits02.png" alt="">
                 </div>
                 <div class="description">
@@ -130,7 +130,7 @@
                   <img src="./images/eraser.png" alt="">
                 </div>
               </div>
-              <div class="examItem examQA" style="display: none;">
+              <div class="examItem examQA">
                 <div class="question">
                   <span class="number">
                     <img src="./images/exam_Q4.png" alt="">
@@ -163,34 +163,94 @@
                   <div class="head">
                     <img src="./images/exam_text_correct.png" alt="">
                   </div>
-                  <div class="content"></div>
-                </div>
-                <div class="resultItem wrong" style="display: none;">
-                  <div class="head">答錯摟</div>
-                  <div class="content">下題試試</div>
-                </div>
-                <div class="resultItem allWrong" style="display: none;">
-                  <div class="head">哎呀</div>
-                  <div class="content">題目做完了</div>
-                </div>
-              </div>
-              <div class="examItem examCoupon" style="display: none;">
-                <div class="head">優惠金獎...GO</div>
-                <div class="content">
-                  <div class="coupon">50元折抵</div>
-                  <div class="coupon">
-                    <div class="code">
-                      <div class="text">優惠券馬</div>
-                      <input type="text" name="" id="" value="LION1009B">
-                      <a href="#" class="copy">copy</a>
+                  <div class="content">
+                    <div class="message">
+                      <span>專業的你</span>
+                    </div>
+                    <div class="main">
+                      牙刷月更換偵查精兵<br>
+                      關心口腔健康真愛認證
                     </div>
                   </div>
+                  <div class="doctor">
+                    <img src="./images/exam_doctor_good.png" alt="">
+                  </div>
+                  <div class="twoDoll">
+                    <img src="./images/exam_man.png" alt="">
+                  </div>
                 </div>
-                <div class="others"></div>
+                <div class="resultItem wrong">
+                  <div class="head">
+                    <img src="./images/exam_text_wrong.png" alt="">
+                  </div>
+                  <div class="content">
+                    <div class="message">
+                      再接再厲！！！ 換下題再試試
+                    </div>
+                    <div class="main">
+                      <img src="./images/exam_dolls_wrong.png" alt="">
+                    </div>
+                  </div>
+                  <div class="eraser">
+                    <img src="./images/eraser.png" alt="">
+                  </div>
+                </div>
+                <div class="resultItem allWrong">
+                  <div class="head">
+                    <img src="./images/exam_text_allWrong.png" alt="">
+                  </div>
+                  <div class="content">
+                    <div class="message">
+                      題目都出完了喔～複習後再挑戰一次吧！
+                    </div>
+                    <div class="main">
+                      <img src="./images/exam_dolls_allWrong.png" alt="">
+                    </div>
+                  </div>
+                  <div class="eraser">
+                    <img src="./images/eraser.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="examItem examCoupon">
+                <div class="head">
+                  <img src="./images/exam_text_coupon.png" alt="">
+                </div>
+                <div class="content">
+                  <div class="main">
+                    2020/9/25~2020/10/25<br>
+                    憑優惠碼至日本獅王官網購買＂細潔全品項＂<br>
+                    <span class="txtPink">滿 $250 享 $100 折扣</span><br>
+                    兌換數量<span class="txtPink">限定 2,000 次</span>，重覆使用很ok，先用先得！
+                  </div>
+                  <div class="line"></div>
+                  <div class="main">
+                    現在上<a href="#" class="txtBlue">日本獅王官網</a>註冊會員，<br>
+                    <span class="txtPink">再享首購券 50 元折抵</span>
+                  </div>
+                  <div class="code">
+                    <div class="text">優惠碼</div>
+                    <div class="codeBox">
+                      LION1009B
+                    </div>
+                    <a href="#" class="copy">
+                      <img src="./images/download.png" alt="">
+                    </a>
+                  </div>
+                  <a href="#" class="method">
+                    ※ 詳情請見活動辦法
+                  </a>
+                </div>
+                <div class="doctor">
+                  <img src="./images/exam_doctor_good.png" alt="">
+                </div>
+                <div class="twoDoll">
+                  <img src="./images/exam_man.png" alt="">
+                </div>
               </div>
             </div>
             <div class="examAction">
-              <div class="examItem examIndex" style="display: none;">
+              <div class="examItem examIndex">
                 <a href="#" class="examBtn start">
                   <img src="./images/btn_start.png" alt="">
                 </a>
@@ -198,7 +258,7 @@
                   <img src="./images/btn_review.png" alt="">
                 </a>
               </div>
-              <div class="examItem examQA" style="display: none;">
+              <div class="examItem examQA">
                 <a href="" class="examBtn tip">
                   <img src="./images/btn_tip.png" alt="">
                 </a>
@@ -209,38 +269,32 @@
                     <img src="./images/btn_coupon.png" alt="">
                   </a>
                 </div>
-                <div class="resultItem wrong" style="display: none;">
-                  <a href="#" class="examBtn nextQ">繼續作答</a>
-                  <a href="#" class="examBtn review">我要複習</a>
+                <div class="resultItem wrong">
+                  <a href="#" class="examBtn nextQ">
+                    <img src="./images/btn_next.png" alt="">
+                  </a>
+                  <a href="#" class="examBtn review">
+                    <img src="./images/btn_review02.png" alt="">
+                  </a>
                 </div>
-                <div class="resultItem allWrong" style="display: none;">
-                  <a href="#" class="examBtn review">帶你複習</a>
-                  <a href="#" class="examBtn tryAgain">再挑戰</a>
+                <div class="resultItem allWrong">
+                  <a href="#" class="examBtn review">
+                    <img src="./images/btn_review03.png" alt="">
+                  </a>
+                  <a href="#" class="examBtn tryAgain">
+                    <img src="./images/btn_tryAgain.png" alt="">
+                  </a>
                 </div>
               </div>
-              <div class="examItem examCoupon" style="display: none;">
-                <a href="#" class="examBtn lionOnlineShop">獅王線上購物</a>
-                <a href="#" class="examBtn tryAgain">再玩一次</a>
+              <div class="examItem examCoupon">
+                <a href="#" class="examBtn lionOnlineShop">
+                  <img src="./images/btn_shopping.png" alt="">
+                </a>
+                <a href="#" class="examBtn tryAgain">
+                  <img src="./images/btn_again.png" alt="">
+                </a>
               </div>
             </div>
-            
-            <!-- <a href="#" class="start">start</a>
-            <div class="question">
-              <div class="title"></div>
-              <ul>
-                  <li>
-                    <a href="#" class="answer" data-answer="0"></a>
-                  </li>
-                  <li>
-                    <a href="#" class="answer" data-answer="1"></a>
-                  </li>
-                  <li>
-                    <a href="#" class="answer" data-answer="2"></a>
-                  </li>
-                </ul>
-            </div>
-            <div class="result"></div>
-            <a href="#" class="nextQ">下一題</a> -->
           </div>
         </div>
         <div class="videos">
@@ -495,9 +549,9 @@
     <script type="text/javascript" src="./js/libs/animation.gsap.js"></script>
     <script type="text/javascript" src="./js/libs/debug.addIndicators.js"></script>
     <script src="./js/libs/owl.carousel.min.js"></script>
-    <script src="./js/index.js"></script>
     <script src="./js/exam.js"></script>
+    <script src="./js/index.js"></script>
     <script src="./js/tracking.js"></script>
-    <script src="./js/test.js"></script>
+    <!-- <script src="./js/test.js"></script> -->
   </body>
 </html>

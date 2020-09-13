@@ -162,9 +162,49 @@ $('.tryAgain').click(function (e) {
 	$('.examIndex').css('display','block');
 });
 
+var today = new Date(),
+	milliseconds = today.getTime(),
+	startDate = new Date(2020, (9-1), 5);
+var visits = parseInt((today - startDate)/60000+500);
+var visitsStr = visits.toString();
+var strLength = visitsStr.length;
 
+function setBox(){
+	for( var box = 0; box < strLength; box++ ) {
+		$('.visits01').after('<div class="numberBox"><span class="number animate">0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>0</span></div>');
+	}
+}
 
+function setNum(){
+	for( var num = 0; num < strLength; num++ ) {
+		(function(num){
+			setTimeout(function() {
+				$('.visits .number').eq(num).removeClass('animate').text(visitsStr[num]);
+			}, 500 * num);
+		})(num);
+	}
+}
 
+$(document).ready(function () {
+	setBox();
 
-
-
+	setInterval(function(){
+		today = new Date(),
+		milliseconds = today.getTime();
+		visits = parseInt((today - startDate)/60000+500);
+		visitsStr = visits.toString();
+		var remainder = ((today - startDate)%60000).toString();
+			sec = remainder.substr(0,2);
+			// console.log(sec);
+			// console.log(remainder.length);
+			// console.log(visits);
+		if ((sec == '59') && (remainder.length == 5)){
+			$('.visits .number').addClass('animate').html('0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>0');
+		} else {
+			return;
+		}
+		setTimeout(function() {
+			setNum();
+		}, 1000);
+	},1000);
+});
