@@ -228,13 +228,50 @@ img {
   font-weight: bold;
   color: #436cab;
 }
+@media only screen and (max-width: 1660px) {
+  .exam .examQA .question .number {
+    width: 40px;
+    height: 40px;
+  }
+  .exam .examQA .question .number img {
+    width: 30px;
+  }
+  .exam .examQA .question .text {
+    font-size: 32px;
+  }
+}
+@media only screen and (max-width: 1460px) {
+  .exam .examQA .question .number {
+    width: 37px;
+    height: 37px;
+  }
+  .exam .examQA .question .number img {
+    width: 28px;
+  }
+  .exam .examQA .question .text {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .exam .examQA .question .number {
+    width: 32px;
+    height: 32px;
+  }
+  .exam .examQA .question .number img {
+    width: 24px;
+  }
+  .exam .examQA .question .text {
+    margin-left: 6px;
+    font-size: 26px;
+  }
+}
 .exam .examQA .answer {
   position: relative;
   box-sizing: border-box;
   display: block;
   width: 70%;
   margin: 5% auto 0;
-  padding: 26px;
+  padding: 4%;
   font-size: 24px;
   font-weight: bold;
   font-style: normal;
@@ -256,6 +293,17 @@ img {
   left: -4px;
   border-radius: 12px;
   border: 4px solid #fff;
+}
+@media only screen and (max-width: 1660px) {
+  .exam .examQA .answer {
+    font-size: 22px;
+  }
+}
+@media only screen and (max-width: 1460px) {
+  .exam .examQA .answer {
+    padding: 3%;
+    font-size: 18px;
+  }
 }
 .exam .examResult .correct .head {
   position: relative;

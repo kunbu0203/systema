@@ -131,14 +131,14 @@ $('.answer').click(function (e) {
 	if (question[qNum].answer[aNum].correct == true){
 		console.log('成功');
 		$('.correct .content').text(question[qNum].conclusion);
-		$('.examResult .correct').css('display','block');
+		// $('.examResult .correct').css('display','block');
 	} else if (qNum == question.length - 1){
 		console.log('全失敗');
-		$('.examResult .allWrong').css('display','block');
+		// $('.examResult .allWrong').css('display','block');
 	} else {
 		console.log('失敗');
 		qNum = qNum+1;
-		$('.examResult .wrong').css('display','block');
+		// $('.examResult .wrong').css('display','block');
 	}
 });
 
