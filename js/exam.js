@@ -124,27 +124,30 @@ var question =[
 ];
 var qNum = 0;
 function enterText(qNum){
+	$('.question .number').html('<img src="./images/exam_Q'+(qNum+1)+'.png" alt="">');
 	$('.question .text').text(question[qNum].title);
 	$('.answers').empty();
 	for (var i=0; i<question[qNum].answer.length; i++) {
-		// $('.answer .text').eq(i).text(question[qNum].answer[i].text);
 		$('.answers').append('<li class="answer" data-answer="'+i+'">'+question[qNum].answer[i].text+'</li>');
 	}
 }
 
+$('.start,.answers,.getCoupon,.nextQ,.tryAgain').click(function (e) { 
+	$('.examItem,.resultItem').fadeOut();
+});
 
 $('.start').click(function (e) { 
 	e.preventDefault();
 	enterText(qNum);
-	$('.examItem').fadeOut();
 	$('.examQA').fadeIn();
 });
 
 $('.answers').click(function (e) { 
-	e.preventDefault();
-	var aNum = $('.answer').data('answer');
-	$('.examItem,.resultItem').fadeOut();
-	$('.examResult').css('display','block');
+	if (e.target.nodeName !== 'LI'){
+		return;
+	}
+	var aNum = e.target.dataset.answer;
+	$('.examResult').fadeIn();
 	if (question[qNum].answer[aNum].correct == true){
 		console.log('成功');
 		$('.correct .content .main').html(question[qNum].conclusion);
@@ -161,21 +164,18 @@ $('.answers').click(function (e) {
 
 $('.getCoupon').click(function (e) { 
 	e.preventDefault();
-	$('.examItem').fadeOut();
 	$('.examCoupon').fadeIn();
 });
 
 $('.nextQ').click(function (e) { 
 	e.preventDefault();
 	enterText(qNum);
-	$('.examItem').fadeOut();
 	$('.examQA').fadeIn();
 });
 
 $('.tryAgain').click(function (e) { 
 	e.preventDefault();
 	qNum = 0;
-	$('.examItem').fadeOut();
 	$('.examIndex').fadeIn();
 });
 
@@ -205,23 +205,25 @@ function setNum(){
 $(document).ready(function () {
 	setBox();
 
-	setInterval(function(){
-		today = new Date(),
-		milliseconds = today.getTime();
-		visits = parseInt((today - startDate)/60000+500);
-		visitsStr = visits.toString();
-		var remainder = ((today - startDate)%60000).toString();
-			sec = remainder.substr(0,2);
-			// console.log(sec);
-			// console.log(remainder.length);
-			// console.log(visits);
-		if ((sec == '59') && (remainder.length == 5)){
-			$('.visits .number').addClass('animate').html('0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>0');
-		} else {
-			return;
-		}
-		setTimeout(function() {
-			setNum();
-		}, 1000);
-	},1000);
+	setNum();
+
+	// setInterval(function(){
+	// 	today = new Date(),
+	// 	milliseconds = today.getTime();
+	// 	visits = parseInt((today - startDate)/60000+500);
+	// 	visitsStr = visits.toString();
+	// 	var remainder = ((today - startDate)%60000).toString();
+	// 		sec = remainder.substr(0,2);
+	// 		// console.log(sec);
+	// 		// console.log(remainder.length);
+	// 		// console.log(visits);
+	// 	if ((sec == '59') && (remainder.length == 5)){
+	// 		$('.visits .number').addClass('animate').html('0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>0');
+	// 	} else {
+	// 		return;
+	// 	}
+	// 	setTimeout(function() {
+	// 		setNum();
+	// 	}, 1000);
+	// },1000);
 });
