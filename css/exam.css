@@ -16,7 +16,7 @@ img {
     transform: translateY(0);
   }
 }
-.examItem {
+.examItem, .resultItem {
   display: none;
 }
 
@@ -276,11 +276,13 @@ img {
   font-weight: bold;
   font-style: normal;
   color: #fff;
+  list-style-type: upper-alpha;
   text-align: left;
   text-decoration: none;
   border-radius: 15px;
   border: 7px solid #000000;
   background-color: #d60067;
+  cursor: pointer;
   box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
 }
 .exam .examQA .answer:before {
