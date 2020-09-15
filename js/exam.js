@@ -179,10 +179,6 @@ $('.tryAgain').click(function (e) {
 	$('.examIndex').fadeIn();
 });
 
-$('.examCoupon .copy').click(function (e) { 
-	e.preventDefault();
-	CopyTextToClipboard(codeBox);
-});
 
 var today = new Date(),
 	milliseconds = today.getTime(),
@@ -205,19 +201,6 @@ function setNum(){
 			}, 500 * num);
 		})(num);
 	}
-}
-
-function CopyTextToClipboard(codeBox) {
-
-    var TextRange = document.createRange();
-    TextRange.selectNode(document.getElementById(codeBox));
-    sel = window.getSelection();
-    sel.removeAllRanges();
-    sel.addRange(TextRange);
-    document.execCommand("copy");
-
-    alert("複製完成！")   //此行可加可不加
-
 }
 
 window.Clipboard = (function(window, document, navigator) {
@@ -297,7 +280,7 @@ $(document).ready(function () {
 
 	setNum();
 
-	$(".copy_coupon").on("click", function() {
+	$(".examCoupon .copy").on("click", function() {
 		var $this = $(this),
 		value = $this.prev("input").val();
 		window.Clipboard.copy(value);
