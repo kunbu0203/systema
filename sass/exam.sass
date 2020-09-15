@@ -53,7 +53,7 @@
 		.examItem
 			padding: 7.5% 20% 12%
 			+rwd(768px)
-				padding: 8% 10% 19%
+				padding: 15% 10% 19%
 	.examAction
 		position: relative
 		font-size: 0
@@ -90,8 +90,15 @@
 			border: 6px solid #fff
 		img
 			max-width: 283px
+		+rwd(768px)
+			width: 60%
+			img
+				max-width: 283px
 	.examBtn + .examBtn
 		margin-left: 36px
+		+rwd(768px)
+			margin-left: 0
+			margin-top: 36px
 	.examIndex
 		display: block
 		.visits
@@ -148,17 +155,26 @@
 					font-size: 19px
 			+rwd(768px)
 				.visits01
-					width: 30%
+					width: 105px
 					margin-right: 2px
 				.visits02
-					width: 36%
+					width: 125px
 					margin-left: 2px
 				.numberBox
-					width: 16px
-					height: 21px
-					font-size: 15px
-					// padding: 1.5px 0 4px 0
+					width: 19px
+					height: 25px
+					font-size: 16px
 					border: 1px solid #cccccc
+					box-shadow: 0 2px 3px rgba(0,0,0,0.3)
+			+rwd(460px)
+				.visits01
+					width: 85.5px
+				.visits02
+					width: 102.6px
+				.numberBox
+					width: 16px
+					height: 20px
+					font-size: 14px
 		.description
 			position: relative
 			margin: 7% 0
@@ -192,6 +208,15 @@
 			width: 91%
 			// max-width: 596px
 			margin: auto
+			img
+				&:nth-of-type(2)
+					display: none
+				+rwd(768px)
+					&:nth-of-type(1)
+						display: none
+					&:nth-of-type(2)
+						display: block
+
 	.examQA
 		.question
 			display: inline-block
@@ -202,7 +227,7 @@
 				vertical-align: top
 				width: 46px
 				height: 46px
-				margin-top: -6px
+				margin-top: -5px
 				border-radius: 50%
 				background-color: $pink
 				border: 6px solid #000000
@@ -234,8 +259,6 @@
 				.number
 					width: 36px
 					height: 36px
-					img
-						width: 28px
 				.text
 					width: calc( 100% - 48px )
 					font-size: 28px

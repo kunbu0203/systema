@@ -179,6 +179,11 @@ $('.tryAgain').click(function (e) {
 	$('.examIndex').fadeIn();
 });
 
+$('.examCoupon .copy').click(function (e) { 
+	e.preventDefault();
+	CopyTextToClipboard(codeBox);
+});
+
 var today = new Date(),
 	milliseconds = today.getTime(),
 	startDate = new Date(2020, (9-1), 5);
@@ -202,10 +207,101 @@ function setNum(){
 	}
 }
 
+function CopyTextToClipboard(codeBox) {
+
+    var TextRange = document.createRange();
+    TextRange.selectNode(document.getElementById(codeBox));
+    sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(TextRange);
+    document.execCommand("copy");
+
+    alert("複製完成！")   //此行可加可不加
+
+}
+
+window.Clipboard = (function(window, document, navigator) {
+	var textArea,
+	copy;
+	
+	function isOS() {
+		return navigator.userAgent.match(/ipad|iphone/i);
+	}
+	
+	function createTextArea(text) {
+		textArea = document.createElement('textArea');
+		textArea.value = text;
+		document.body.appendChild(textArea);
+	}
+	
+	function selectText() {
+		var range,
+		selection;
+		
+		if (isOS()) {
+			range = document.createRange();
+			range.selectNodeContents(textArea);
+			selection = window.getSelection();
+			selection.removeAllRanges();
+			selection.addRange(range);
+			textArea.setSelectionRange(0, 999999);
+		} else {
+			textArea.select();
+		}
+	}
+	
+	function copyToClipboard() {
+		document.execCommand("Copy");
+		document.body.removeChild(textArea);
+	}
+	
+	copy = function(text) {
+		createTextArea(text);
+		selectText();
+		copyToClipboard();
+	};
+	
+	return {
+		copy: copy
+	};
+})(window, document, navigator);
+
+function download() {
+	var image = new Image();
+	image.crossOrigin = "anonymous";
+	image.src = "../images/download_img.jpg";
+	var fileName = image.src.split(/(\\|\/)/g).pop();
+	image.onload = function () {
+		var canvas = document.createElement('canvas');
+		canvas.width = this.naturalWidth; // or 'width' if you want a special/scaled size
+		canvas.height = this.naturalHeight; // or 'height' if you want a special/scaled size
+		canvas.getContext('2d').drawImage(this, 0, 0);
+		var blob;
+		// ... get as Data URI
+		if (image.src.indexOf(".jpg") > -1) {
+		blob = canvas.toDataURL("image/jpeg");
+		} else if (image.src.indexOf(".png") > -1) {
+		blob = canvas.toDataURL("image/png");
+		} else if (image.src.indexOf(".gif") > -1) {
+		blob = canvas.toDataURL("image/gif");
+		} else {
+		blob = canvas.toDataURL("image/png");
+		}
+		$("body").html("<b>點擊下載圖片.</b><br><a download='" + fileName + "' href='" + blob + "'><img src='" + blob + "'/></a>");
+	};
+}
+	
+	
 $(document).ready(function () {
 	setBox();
 
 	setNum();
+
+	$(".copy_coupon").on("click", function() {
+		var $this = $(this),
+		value = $this.prev("input").val();
+		window.Clipboard.copy(value);
+	});
 
 	// setInterval(function(){
 	// 	today = new Date(),

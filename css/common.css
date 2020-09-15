@@ -561,3 +561,20 @@ footer .footer_wrapper .row a.tel {
     padding: 5px 0;
   }
 }
+.hidden-pc {
+  display: none;
+}
+@media only screen and (max-width: 480px) {
+  .hidden-pc {
+    display: block;
+  }
+}
+
+.hidden-mob {
+  display: block;
+}
+@media only screen and (max-width: 480px) {
+  .hidden-mob {
+    display: none;
+  }
+}
