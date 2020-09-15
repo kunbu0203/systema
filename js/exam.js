@@ -262,12 +262,7 @@ $(document).ready(function () {
 		e.preventDefault();
 		qNum = 0;
 		$('.examIndex').fadeIn();
-		today = new Date(),
-		milliseconds = today.getTime(),
-		startDate = new Date(2020, (9-1), 5);
-		visits = parseInt((today - startDate)/300000+500);
-		visitsStr = visits.toString();
-		strLength = visitsStr.length;
+		$('.visits .number').addClass('animate');
 		setTimeout(function() {
 			setNum();
 		}, 1000);
