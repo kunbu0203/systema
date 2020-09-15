@@ -278,17 +278,17 @@ article {
 }
 @media only screen and (max-width: 1380px) {
   .profession {
-    padding: 12% 0;
+    padding-bottom: 12%;
   }
 }
 @media only screen and (max-width: 1024px) {
   .profession {
-    padding: 120px 0;
+    padding-bottom: 120px;
   }
 }
 @media only screen and (max-width: 768px) {
   .profession {
-    padding: 23% 0;
+    padding: 10% 0 23%;
   }
 }
 .profession .wrapper {
@@ -480,7 +480,7 @@ article {
 .introduction .wrapper .knowledgeSlider .knowledgeContent {
   position: relative;
   width: 100%;
-  margin-top: -30px;
+  margin-top: -35px;
   font-size: 0;
 }
 @media only screen and (max-width: 768px) {
@@ -638,6 +638,11 @@ article {
 @media only screen and (max-width: 1540px) {
   .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt p {
     font-size: 20px;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  .introduction .wrapper .knowledgeSlider .knowledgeContent .knowledgeWrapper .knowledge .knowledgeTxt p {
+    font-size: 18px;
   }
 }
 @media only screen and (max-width: 1280px) {

@@ -20,6 +20,9 @@ img {
   display: none;
 }
 
+.exam {
+  margin-bottom: 5%;
+}
 .exam .examBg img:nth-of-type(2) {
   display: none;
 }
@@ -33,25 +36,14 @@ img {
 }
 .exam .examTitle {
   position: relative;
+  width: 68%;
+  margin: auto;
   z-index: 2;
 }
-.exam .examTitle img {
-  position: relative;
-  z-index: 1;
-}
-.exam .examTitle:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  display: block;
-  background-image: url(../images/exam_title_shine.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  z-index: 0;
+@media only screen and (max-width: 768px) {
+  .exam .examTitle {
+    width: 100%;
+  }
 }
 .exam .examItem {
   position: absolute;
@@ -71,8 +63,11 @@ img {
   padding: 7.5% 20% 12%;
 }
 @media only screen and (max-width: 768px) {
+  .exam .examContent {
+    margin-top: -20%;
+  }
   .exam .examContent .examItem {
-    padding: 15% 10% 19%;
+    padding: 22% 10% 19%;
   }
 }
 .exam .examAction {
@@ -86,12 +81,17 @@ img {
   width: 100%;
   padding-bottom: 10%;
 }
+@media only screen and (max-width: 768px) {
+  .exam .examAction:before {
+    padding-bottom: 45%;
+  }
+}
 .exam .examBtn {
   position: relative;
   box-sizing: border-box;
   display: inline-block;
   width: 32%;
-  padding: 20px 27px 18px;
+  padding: 2% 2.8% 1.8%;
   border-radius: 15px;
   border: 10px solid #89bdee;
   background-color: #003893;
@@ -118,9 +118,19 @@ img {
 @media only screen and (max-width: 768px) {
   .exam .examBtn {
     width: 60%;
+    padding: 3.5% 6.1% 3.2%;
   }
-  .exam .examBtn img {
-    max-width: 283px;
+}
+@media only screen and (max-width: 520px) {
+  .exam .examBtn {
+    border-radius: 13px;
+    border: 8px solid #89bdee;
+  }
+  .exam .examBtn:before {
+    top: -5px;
+    left: -5px;
+    border-radius: 10px;
+    border: 5px solid #fff;
   }
 }
 .exam .examBtn + .examBtn {
@@ -129,7 +139,7 @@ img {
 @media only screen and (max-width: 768px) {
   .exam .examBtn + .examBtn {
     margin-left: 0;
-    margin-top: 36px;
+    margin-top: 4%;
   }
 }
 .exam .examIndex {
@@ -216,7 +226,33 @@ img {
     font-size: 19px;
   }
 }
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 768px) {
+  .exam .examIndex .visits .visits01 {
+    width: 143px;
+  }
+  .exam .examIndex .visits .visits02 {
+    width: 169px;
+  }
+  .exam .examIndex .visits .numberBox {
+    width: 30px;
+    height: 33px;
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .exam .examIndex .visits .visits01 {
+    width: 125px;
+  }
+  .exam .examIndex .visits .visits02 {
+    width: 149px;
+  }
+  .exam .examIndex .visits .numberBox {
+    width: 25px;
+    height: 28px;
+    font-size: 19px;
+  }
+}
+@media only screen and (max-width: 520px) {
   .exam .examIndex .visits .visits01 {
     width: 85.5px;
     margin-right: 2px;
@@ -275,6 +311,25 @@ img {
     font-size: 13px;
   }
 }
+@media only screen and (max-width: 768px) {
+  .exam .examIndex .description {
+    width: 95%;
+    margin: 7% auto;
+    font-size: 18px;
+    line-height: 1.7;
+    letter-spacing: 0;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .exam .examIndex .description {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .exam .examIndex .description {
+    font-size: 13px;
+  }
+}
 .exam .examIndex .message {
   width: 91%;
   margin: auto;
@@ -283,6 +338,9 @@ img {
   display: none;
 }
 @media only screen and (max-width: 768px) {
+  .exam .examIndex .message {
+    width: 83%;
+  }
   .exam .examIndex .message img:nth-of-type(1) {
     display: none;
   }
@@ -372,6 +430,36 @@ img {
     font-size: 20px;
   }
 }
+@media only screen and (max-width: 768px) {
+  .exam .examQA .question .number {
+    width: 30px;
+    height: 30px;
+  }
+  .exam .examQA .question .text {
+    width: calc( 100% - 42px );
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .exam .examQA .question .number {
+    width: 26px;
+    height: 26px;
+  }
+  .exam .examQA .question .text {
+    width: calc( 100% - 34px );
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .exam .examQA .question .number {
+    width: 22px;
+    height: 22px;
+  }
+  .exam .examQA .question .text {
+    width: calc( 100% - 30px );
+    font-size: 18px;
+  }
+}
 .exam .examQA .answer {
   position: relative;
   box-sizing: border-box;
@@ -410,7 +498,6 @@ img {
 }
 @media only screen and (max-width: 1460px) {
   .exam .examQA .answer {
-    padding: 3%;
     font-size: 14px;
     border-radius: 10px;
   }
@@ -426,6 +513,19 @@ img {
     top: -2px;
     left: -2px;
     border: 2px solid #fff;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .exam .examQA .answer {
+    margin: 5% auto 0;
+    padding: 3.5%;
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .exam .examQA .answer {
+    margin: 4% auto 0;
+    font-size: 14px;
   }
 }
 .exam .examResult .correct .head {
@@ -518,6 +618,55 @@ img {
     font-size: 20px;
   }
 }
+@media only screen and (max-width: 768px) {
+  .exam .examResult .correct .head {
+    width: 85%;
+    margin-top: 5%;
+  }
+  .exam .examResult .correct .head:before {
+    top: -75%;
+    left: -6%;
+  }
+  .exam .examResult .correct .head:after {
+    top: -75%;
+    right: -6%;
+  }
+  .exam .examResult .correct .content {
+    width: 90%;
+    margin: 10% auto 0;
+  }
+  .exam .examResult .correct .message:before, .exam .examResult .correct .message:after {
+    width: calc( (100% - 131px)/2 );
+  }
+  .exam .examResult .correct .message span {
+    font-size: 29px;
+  }
+  .exam .examResult .correct .main {
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .exam .examResult .correct .message:before, .exam .examResult .correct .message:after {
+    width: calc( (100% - 115px)/2 );
+  }
+  .exam .examResult .correct .message span {
+    font-size: 25px;
+  }
+  .exam .examResult .correct .main {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .exam .examResult .correct .message:before, .exam .examResult .correct .message:after {
+    width: calc( (100% - 115px)/2 );
+  }
+  .exam .examResult .correct .message span {
+    font-size: 21px;
+  }
+  .exam .examResult .correct .main {
+    font-size: 16px;
+  }
+}
 .exam .examResult .wrong .head, .exam .examResult .allWrong .head {
   width: 70%;
   margin: auto;
@@ -542,6 +691,29 @@ img {
 @media only screen and (max-width: 1200px) {
   .exam .examResult .wrong .message, .exam .examResult .allWrong .message {
     font-size: 16px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .exam .examResult .wrong .head, .exam .examResult .allWrong .head {
+    width: 86%;
+    margin-top: 4%;
+  }
+  .exam .examResult .wrong .main, .exam .examResult .allWrong .main {
+    bottom: 12.7%;
+    width: 77%;
+  }
+  .exam .examResult .wrong .message, .exam .examResult .allWrong .message {
+    font-size: 22px;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .exam .examResult .wrong .message, .exam .examResult .allWrong .message {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .exam .examResult .wrong .message, .exam .examResult .allWrong .message {
+    font-size: 14px;
   }
 }
 .exam .examCoupon .head {
@@ -695,21 +867,131 @@ img {
     height: 24px;
   }
 }
+@media only screen and (max-width: 768px) {
+  .exam .examCoupon .main {
+    font-size: 20px;
+    line-height: 1.8;
+  }
+  .exam .examCoupon .main .hidden-pc {
+    display: none;
+  }
+  .exam .examCoupon .line {
+    margin: 3% auto;
+  }
+  .exam .examCoupon .code {
+    margin: 3% 0;
+  }
+  .exam .examCoupon .code .text {
+    font-size: 15px;
+  }
+  .exam .examCoupon .code .codeBox {
+    width: 214px;
+    height: 40px;
+    margin: 0 8px;
+    font-size: 18px;
+  }
+  .exam .examCoupon .code .copy {
+    width: 27px;
+    height: 27px;
+  }
+  .exam .examCoupon .method {
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 640px) {
+  .exam .examCoupon .main {
+    font-size: 16px;
+  }
+  .exam .examCoupon .code .text {
+    font-size: 14px;
+  }
+  .exam .examCoupon .code .codeBox {
+    width: 193px;
+    height: 36px;
+    margin: 0 8px;
+    padding: 9px;
+    font-size: 16px;
+  }
+  .exam .examCoupon .code .copy {
+    width: 24px;
+    height: 24px;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.3);
+  }
+  .exam .examCoupon .method {
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 520px) {
+  .exam .examCoupon .main {
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .exam .examCoupon .main .hidden-pc {
+    display: block;
+  }
+  .exam .examCoupon .code .text {
+    font-size: 13px;
+  }
+  .exam .examCoupon .code .codeBox {
+    width: 167px;
+    height: 32px;
+    padding: 8px;
+    font-size: 15px;
+  }
+  .exam .examCoupon .code .copy {
+    width: 22px;
+    height: 22px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .exam .examCoupon .main {
+    font-size: 12px;
+  }
+  .exam .examCoupon .code .text {
+    font-size: 12px;
+  }
+  .exam .examCoupon .code .codeBox {
+    width: 144px;
+    height: 27px;
+    margin: 0 4px;
+    padding: 6.5px;
+    font-size: 13px;
+  }
+  .exam .examCoupon .code .copy {
+    margin-top: -3px;
+  }
+}
 .exam .doctor {
   position: absolute;
   right: 4%;
   bottom: 10%;
   width: 20%;
+  pointer-events: none;
+}
+@media only screen and (max-width: 768px) {
+  .exam .doctor {
+    right: -2%;
+    bottom: 7%;
+    width: 21%;
+  }
 }
 .exam .eraser {
   position: absolute;
   bottom: 9%;
   left: 6%;
   width: 13.5%;
+  pointer-events: none;
 }
 .exam .twoDoll {
   position: absolute;
   bottom: 9%;
   left: -3%;
   width: 31%;
+  pointer-events: none;
+}
+@media only screen and (max-width: 768px) {
+  .exam .twoDoll {
+    left: -2%;
+    bottom: 7%;
+  }
 }

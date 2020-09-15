@@ -108,6 +108,8 @@ header
 		+clearfix
 		position: relative
 		padding: 15px 30px
+		+rwd(880px)
+			padding: 15px
 		+rwd(768px)
 			padding: 15px
 		.menu_bg
@@ -144,8 +146,6 @@ header
 				text-align: center
 				background-color: #ffffff
 				box-shadow: 0 5px 8px rgba(0,0,0,0.4)
-			+rwd(768px)
-				padding-top: 75px
 			+rwd(640px)
 				padding-top: 58px
 			a
@@ -176,6 +176,8 @@ header
 					a
 						&:link,&:visited,&:active
 							color: $blue
+					+rwd(880px)
+						padding: 0 12px
 					+rwd(768px)
 						display: block
 						margin: 0 15px
@@ -195,6 +197,8 @@ header
 				a
 					&:link,&:visited,&:active
 						color: #ffffff
+				+rwd(880px)
+					padding: 10px 12px
 				+rwd(768px)
 					display: block
 					margin: 0 15px
@@ -403,9 +407,9 @@ footer
 
 .hidden-pc
 	display: none
-	+rwd(480px)
+	+rwd(768px)
 		display: block
 .hidden-mob
 	display: block
-	+rwd(480px)
+	+rwd(768px)
 		display: none

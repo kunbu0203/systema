@@ -107,19 +107,23 @@ var question =[
 		title: '如何挑選與使用護齦漱口水?',
 		answer: [
 			{
-				text: '共用餐具',
+				text: '無添加酒精溫和低刺激',
 				correct: false
 			},
 			{
-				text: '使用公筷母匙',
+				text: '有效成分能留存護齦',
+				correct: false
+			},
+			{
+				text: '使用後不需再用清水漱口',
+				correct: false
+			},
+			{
+				text: '以上皆是',
 				correct: true
-			},
-			{
-				text: '咳嗽不遮掩',
-				correct: false
 			}
 		],
-		conclusion: '月圓人團圓聚餐公筷母匙<br>朋友圈防疫護齦小達人'
+		conclusion: '最懂護齦做好做滿<br>真是（適）贏（齦）家（佳）'
 	}
 ];
 var qNum = 0;

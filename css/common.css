@@ -159,6 +159,11 @@ header .menu:after {
   display: block;
   clear: both;
 }
+@media only screen and (max-width: 880px) {
+  header .menu {
+    padding: 15px;
+  }
+}
 @media only screen and (max-width: 768px) {
   header .menu {
     padding: 15px;
@@ -211,11 +216,6 @@ header .menu .nav {
     box-shadow: 0 5px 8px rgba(0, 0, 0, 0.4);
   }
 }
-@media only screen and (max-width: 768px) {
-  header .menu .nav {
-    padding-top: 75px;
-  }
-}
 @media only screen and (max-width: 640px) {
   header .menu .nav {
     padding-top: 58px;
@@ -256,6 +256,11 @@ header .menu .nav .target_item:first-of-type:before {
 header .menu .nav .target_item a:link, header .menu .nav .target_item a:visited, header .menu .nav .target_item a:active {
   color: #003893;
 }
+@media only screen and (max-width: 880px) {
+  header .menu .nav .target_item {
+    padding: 0 12px;
+  }
+}
 @media only screen and (max-width: 768px) {
   header .menu .nav .target_item {
     display: block;
@@ -279,6 +284,11 @@ header .menu .nav .official {
 }
 header .menu .nav .official a:link, header .menu .nav .official a:visited, header .menu .nav .official a:active {
   color: #ffffff;
+}
+@media only screen and (max-width: 880px) {
+  header .menu .nav .official {
+    padding: 10px 12px;
+  }
 }
 @media only screen and (max-width: 768px) {
   header .menu .nav .official {
@@ -564,7 +574,7 @@ footer .footer_wrapper .row a.tel {
 .hidden-pc {
   display: none;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) {
   .hidden-pc {
     display: block;
   }
@@ -573,7 +583,7 @@ footer .footer_wrapper .row a.tel {
 .hidden-mob {
   display: block;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) {
   .hidden-mob {
     display: none;
   }

@@ -78,9 +78,9 @@ function resizeDo() {
   // console.log("ww:" + ww)
   // console.log("wh:" + wh)
 
-  var vh = window.innerHeight * 0.01;
-  // document.documentElement.style.setProperty('--vh', `${vh}px`);
-  document.documentElement.style.setProperty('--vh', '${'+vh+'}px');
+  // var vh = window.innerHeight * 0.01;
+  // // document.documentElement.style.setProperty('--vh', `${vh}px`);
+  // document.documentElement.style.setProperty('--vh', '${'+vh+'}px');
 
   if ((ww <= 768) && !isMobileStyle) {
     isMobileStyle = true;
@@ -393,6 +393,17 @@ $(document).ready(function(){
     $('.nav').slideToggle();
   });
 
+  $('.exam_action').click(function (e) { 
+    e.preventDefault();
+    $('html, body').animate({
+        scrollTop: $('.exam .wrapper').offset().top
+    }, 800);
+    $('.menu').removeClass('show');
+    if (isMobileStyle) {
+      $('.nav').slideUp();
+    }
+  });
+
   $('.video_action').click(function (e) { 
     e.preventDefault();
     $('html, body').animate({
@@ -404,7 +415,7 @@ $(document).ready(function(){
     }
   });
 
-  $('.knowledge_action').click(function (e) { 
+  $('.knowledge_action,.examBtn.review').click(function (e) { 
     e.preventDefault();
     $('html, body').animate({
         scrollTop: $('section.introduction .knowledgeSlider').offset().top - 100
