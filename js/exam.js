@@ -181,6 +181,7 @@ $('.tryAgain').click(function (e) {
 	e.preventDefault();
 	qNum = 0;
 	$('.examIndex').fadeIn();
+	setNum();
 });
 
 
