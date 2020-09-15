@@ -268,8 +268,9 @@ $(document).ready(function () {
 		visits = parseInt((today - startDate)/300000+500);
 		visitsStr = visits.toString();
 		strLength = visitsStr.length;
-		setNum();
-		alert('重新');
+		setTimeout(function() {
+			setNum();
+		}, 1000);
 	});
 
 	// setInterval(function(){
