@@ -266,30 +266,30 @@ window.Clipboard = (function(window, document, navigator) {
 	};
 })(window, document, navigator);
 
-function download() {
-	var image = new Image();
-	image.crossOrigin = "anonymous";
-	image.src = "../images/download_img.jpg";
-	var fileName = image.src.split(/(\\|\/)/g).pop();
-	image.onload = function () {
-		var canvas = document.createElement('canvas');
-		canvas.width = this.naturalWidth; // or 'width' if you want a special/scaled size
-		canvas.height = this.naturalHeight; // or 'height' if you want a special/scaled size
-		canvas.getContext('2d').drawImage(this, 0, 0);
-		var blob;
-		// ... get as Data URI
-		if (image.src.indexOf(".jpg") > -1) {
-		blob = canvas.toDataURL("image/jpeg");
-		} else if (image.src.indexOf(".png") > -1) {
-		blob = canvas.toDataURL("image/png");
-		} else if (image.src.indexOf(".gif") > -1) {
-		blob = canvas.toDataURL("image/gif");
-		} else {
-		blob = canvas.toDataURL("image/png");
-		}
-		$("body").html("<b>點擊下載圖片.</b><br><a download='" + fileName + "' href='" + blob + "'><img src='" + blob + "'/></a>");
-	};
-}
+// function download() {
+// 	var image = new Image();
+// 	image.crossOrigin = "anonymous";
+// 	image.src = "../images/download_img.jpg";
+// 	var fileName = image.src.split(/(\\|\/)/g).pop();
+// 	image.onload = function () {
+// 		var canvas = document.createElement('canvas');
+// 		canvas.width = this.naturalWidth; // or 'width' if you want a special/scaled size
+// 		canvas.height = this.naturalHeight; // or 'height' if you want a special/scaled size
+// 		canvas.getContext('2d').drawImage(this, 0, 0);
+// 		var blob;
+// 		// ... get as Data URI
+// 		if (image.src.indexOf(".jpg") > -1) {
+// 		blob = canvas.toDataURL("image/jpeg");
+// 		} else if (image.src.indexOf(".png") > -1) {
+// 		blob = canvas.toDataURL("image/png");
+// 		} else if (image.src.indexOf(".gif") > -1) {
+// 		blob = canvas.toDataURL("image/gif");
+// 		} else {
+// 		blob = canvas.toDataURL("image/png");
+// 		}
+// 		$("body").html("<b>點擊下載圖片.</b><br><a download='" + fileName + "' href='" + blob + "'><img src='" + blob + "'/></a>");
+// 	};
+// }
 	
 	
 $(document).ready(function () {
