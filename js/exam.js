@@ -136,55 +136,6 @@ function enterText(qNum){
 	}
 }
 
-$('.start,.answers,.getCoupon,.nextQ,.tryAgain').click(function (e) { 
-	$('.examItem,.resultItem').fadeOut();
-});
-
-$('.start').click(function (e) { 
-	e.preventDefault();
-	enterText(qNum);
-	$('.examQA').fadeIn();
-});
-
-$('.answers').click(function (e) { 
-	if (e.target.nodeName !== 'LI'){
-		return;
-	}
-	var aNum = e.target.dataset.answer;
-	$('.examResult').fadeIn();
-	if (question[qNum].answer[aNum].correct == true){
-		console.log('成功');
-		$('.correct .content .main').html(question[qNum].conclusion);
-		$('.resultItem.correct').fadeIn();
-	} else if (qNum == question.length - 1){
-		console.log('全失敗');
-		$('.resultItem.allWrong').fadeIn();
-	} else {
-		console.log('失敗');
-		qNum = qNum+1;
-		$('.resultItem.wrong').fadeIn();
-	}
-});
-
-$('.getCoupon').click(function (e) { 
-	e.preventDefault();
-	$('.examCoupon').fadeIn();
-});
-
-$('.nextQ').click(function (e) { 
-	e.preventDefault();
-	enterText(qNum);
-	$('.examQA').fadeIn();
-});
-
-$('.tryAgain').click(function (e) { 
-	e.preventDefault();
-	qNum = 0;
-	$('.examIndex').fadeIn();
-	setNum();
-});
-
-
 var today = new Date(),
 	milliseconds = today.getTime(),
 	startDate = new Date(2020, (9-1), 5);
@@ -259,12 +210,59 @@ $(document).ready(function () {
 	setBox();
 
 	// setNum();
+	$('.start,.answers,.getCoupon,.nextQ,.tryAgain').click(function (e) { 
+		$('.examItem,.resultItem').fadeOut();
+	});
+	
+	$('.start').click(function (e) { 
+		e.preventDefault();
+		enterText(qNum);
+		$('.examQA').fadeIn();
+	});
+	
+	$('.answers').click(function (e) { 
+		if (e.target.nodeName !== 'LI'){
+			return;
+		}
+		var aNum = e.target.dataset.answer;
+		$('.examResult').fadeIn();
+		if (question[qNum].answer[aNum].correct == true){
+			console.log('成功');
+			$('.correct .content .main').html(question[qNum].conclusion);
+			$('.resultItem.correct').fadeIn();
+		} else if (qNum == question.length - 1){
+			console.log('全失敗');
+			$('.resultItem.allWrong').fadeIn();
+		} else {
+			console.log('失敗');
+			qNum = qNum+1;
+			$('.resultItem.wrong').fadeIn();
+		}
+	});
+	
+	$('.getCoupon').click(function (e) { 
+		e.preventDefault();
+		$('.examCoupon').fadeIn();
+	});
+	
+	$('.nextQ').click(function (e) { 
+		e.preventDefault();
+		enterText(qNum);
+		$('.examQA').fadeIn();
+	});
 
 	$(".examCoupon .copy").on("click", function() {
 		var $this = $(this),
 		value = $this.prev("input").val();
 		window.Clipboard.copy(value);
 		alert('優惠碼已複製');
+	});
+
+	$('.tryAgain').click(function (e) { 
+		e.preventDefault();
+		qNum = 0;
+		$('.examIndex').fadeIn();
+		setNum();
 	});
 
 	// setInterval(function(){
