@@ -168,8 +168,8 @@ img {
 }
 .exam .examIndex .visits .numberBox .number {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: calc(50% - .5px);
+  left: calc(50% - .5px);
   transform: translate(-50%, -50%);
 }
 .exam .examIndex .visits .numberBox .number.animate {
@@ -179,58 +179,58 @@ img {
 }
 @media only screen and (max-width: 1660px) {
   .exam .examIndex .visits .visits01 {
-    width: 160px;
+    width: 171px;
   }
   .exam .examIndex .visits .visits02 {
-    width: 190px;
+    width: 203px;
   }
   .exam .examIndex .visits .numberBox {
-    width: 34px;
-    height: 38px;
-    font-size: 28.5px;
+    width: 35px;
+    height: 40px;
+    font-size: 29px;
   }
 }
 @media only screen and (max-width: 1460px) {
   .exam .examIndex .visits .visits01 {
-    width: 115px;
+    width: 143px;
   }
   .exam .examIndex .visits .visits02 {
-    width: 136px;
+    width: 169px;
   }
   .exam .examIndex .visits .numberBox {
-    width: 24px;
-    height: 26px;
+    width: 30px;
+    height: 33px;
+    font-size: 24px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .exam .examIndex .visits .visits01 {
+    width: 125px;
+  }
+  .exam .examIndex .visits .visits02 {
+    width: 149px;
+  }
+  .exam .examIndex .visits .numberBox {
+    width: 25px;
+    height: 28px;
     font-size: 19px;
   }
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 540px) {
   .exam .examIndex .visits .visits01 {
-    width: 105px;
+    width: 85.5px;
     margin-right: 2px;
   }
   .exam .examIndex .visits .visits02 {
-    width: 125px;
-    margin-left: 2px;
-  }
-  .exam .examIndex .visits .numberBox {
-    width: 19px;
-    height: 25px;
-    font-size: 16px;
-    border: 1px solid #cccccc;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
-  }
-}
-@media only screen and (max-width: 460px) {
-  .exam .examIndex .visits .visits01 {
-    width: 85.5px;
-  }
-  .exam .examIndex .visits .visits02 {
     width: 102.6px;
+    margin-left: 2px;
   }
   .exam .examIndex .visits .numberBox {
     width: 16px;
     height: 20px;
     font-size: 14px;
+    border: 1px solid #cccccc;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
   }
 }
 .exam .examIndex .description {

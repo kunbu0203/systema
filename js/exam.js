@@ -183,7 +183,7 @@ $('.tryAgain').click(function (e) {
 var today = new Date(),
 	milliseconds = today.getTime(),
 	startDate = new Date(2020, (9-1), 5);
-var visits = parseInt((today - startDate)/60000+500);
+var visits = parseInt((today - startDate)/300000+500);
 var visitsStr = visits.toString();
 var strLength = visitsStr.length;
 
@@ -253,7 +253,7 @@ window.Clipboard = (function(window, document, navigator) {
 $(document).ready(function () {
 	setBox();
 
-	setNum();
+	// setNum();
 
 	$(".examCoupon .copy").on("click", function() {
 		var $this = $(this),
@@ -265,9 +265,9 @@ $(document).ready(function () {
 	// setInterval(function(){
 	// 	today = new Date(),
 	// 	milliseconds = today.getTime();
-	// 	visits = parseInt((today - startDate)/60000+500);
+	// 	visits = parseInt((today - startDate)/300000+500);
 	// 	visitsStr = visits.toString();
-	// 	var remainder = ((today - startDate)%60000).toString();
+	// 	var remainder = ((today - startDate)%300000).toString();
 	// 		sec = remainder.substr(0,2);
 	// 		// console.log(sec);
 	// 		// console.log(remainder.length);

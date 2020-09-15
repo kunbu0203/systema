@@ -130,51 +130,67 @@
 				box-shadow: 0 3px 5px rgba(0,0,0,0.3)
 				overflow: hidden
 				.number
-					+pstc5
+					position: absolute
+					top: calc(50% - .5px)
+					left: calc(50% - .5px)
+					transform: translate(-50%, -50%)
 				.number.animate
 					position: static
 					display: block
 					animation: slotMachine .1s infinite linear
 			+rwd(1660px)
 				.visits01
-					width: 160px
+					width: 171px
 				.visits02
-					width: 190px
+					width: 203px
 				.numberBox
-					width: 34px
-					height: 38px
-					font-size: 28.5px
+					width: 35px
+					height: 40px
+					font-size: 29px
 			+rwd(1460px)
 				.visits01
-					width: 115px
+					width: 143px
 				.visits02
-					width: 136px
+					width: 169px
 				.numberBox
-					width: 24px
-					height: 26px
-					font-size: 19px
-			+rwd(768px)
+					width: 30px
+					height: 33px
+					font-size: 24px
+			+rwd(1200px)
 				.visits01
-					width: 105px
-					margin-right: 2px
-				.visits02
 					width: 125px
-					margin-left: 2px
+				.visits02
+					width: 149px
 				.numberBox
-					width: 19px
-					height: 25px
-					font-size: 16px
-					border: 1px solid #cccccc
-					box-shadow: 0 2px 3px rgba(0,0,0,0.3)
-			+rwd(460px)
+					width: 25px
+					height: 28px
+					font-size: 19px
+			// +rwd(640px)
+			// 	.visits01
+			// 		width: 105px
+			// 		margin-right: 2px
+			// 	.visits02
+			// 		width: 125px
+			// 		margin-left: 2px
+			// 	.numberBox
+			// 		width: 19px
+			// 		height: 25px
+			// 		font-size: 16px
+			// 		border: 1px solid #cccccc
+			// 		box-shadow: 0 2px 3px rgba(0,0,0,0.3)
+			+rwd(540px)
 				.visits01
 					width: 85.5px
+					margin-right: 2px
 				.visits02
 					width: 102.6px
+					margin-left: 2px
 				.numberBox
 					width: 16px
 					height: 20px
 					font-size: 14px
+					border: 1px solid #cccccc
+					box-shadow: 0 2px 3px rgba(0,0,0,0.3)
 		.description
 			position: relative
 			margin: 7% 0

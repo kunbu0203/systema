@@ -149,7 +149,8 @@ function doAnimate(){
     TweenMax.set('.exam .wrapper', {y:100,opacity:0})
 
     var tween2 = new TimelineMax()
-    .add(TweenMax.to('.exam .wrapper', .5, {y:0,opacity:1, onComplete:setNum}));
+    .add(TweenMax.to('.exam .wrapper', .5, {y:0,opacity:1}))
+    .eventCallback("onComplete", setNum)
 
     // build scene
     var scene2 = new ScrollMagic.Scene({
