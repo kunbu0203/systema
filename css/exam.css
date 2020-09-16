@@ -16,6 +16,10 @@ img {
     transform: translateY(0);
   }
 }
+.popupShow {
+  overflow: hidden;
+}
+
 .examItem, .resultItem {
   display: none;
 }
@@ -562,7 +566,10 @@ img {
   content: "";
   display: block;
   width: 100%;
-  border-top: 5px dotted #003893;
+  height: 6px;
+  background-image: url(../images/dot.png);
+  background-repeat: repeat;
+  background-size: contain;
 }
 .exam .examResult .correct .message {
   font-size: 0;
@@ -572,7 +579,10 @@ img {
   display: inline-block;
   vertical-align: middle;
   width: calc( (100% - 151px)/2 );
-  border-top: 5px dotted #003893;
+  height: 6px;
+  background-image: url(../images/dot.png);
+  background-repeat: repeat;
+  background-size: contain;
 }
 .exam .examResult .correct .message span {
   display: inline-block;
@@ -590,11 +600,11 @@ img {
 }
 @media only screen and (max-width: 1460px) {
   .exam .examResult .correct .content:after {
-    border-top: 4px dotted #003893;
+    height: 4px;
   }
   .exam .examResult .correct .message:before, .exam .examResult .correct .message:after {
     width: calc( (100% - 131px)/2 );
-    border-top: 4px dotted #003893;
+    height: 4px;
   }
   .exam .examResult .correct .message span {
     font-size: 29px;
@@ -605,11 +615,11 @@ img {
 }
 @media only screen and (max-width: 1200px) {
   .exam .examResult .correct .content:after {
-    border-top: 3px dotted #003893;
+    height: 3px;
   }
   .exam .examResult .correct .message:before, .exam .examResult .correct .message:after {
     width: calc( (100% - 115px)/2 );
-    border-top: 3px dotted #003893;
+    height: 3px;
   }
   .exam .examResult .correct .message span {
     font-size: 25px;
@@ -731,13 +741,10 @@ img {
 .exam .examCoupon .line {
   width: 69.5%;
   margin: 3% auto;
-  border-top: 5px dotted #003893;
-}
-.exam .examCoupon .txtBlue {
-  color: #0071bc;
-}
-.exam .examCoupon .txtPink {
-  color: #d60067;
+  height: 6px;
+  background-image: url(../images/dot.png);
+  background-repeat: repeat;
+  background-size: contain;
 }
 .exam .examCoupon .code {
   margin: 3% 0;
@@ -793,6 +800,12 @@ img {
   display: block;
   width: 38%;
 }
+.exam .examCoupon .code .copy.hidden-pc {
+  display: none;
+}
+.exam .examCoupon .code .copy.hidden-mob {
+  display: inline-block;
+}
 .exam .examCoupon .method {
   font-size: 14px;
   font-style: normal;
@@ -822,7 +835,7 @@ img {
   }
   .exam .examCoupon .line {
     margin: 2% auto;
-    border-top: 4px dotted #003893;
+    height: 4px;
   }
   .exam .examCoupon .code {
     margin: 2% 0;
@@ -850,7 +863,7 @@ img {
     line-height: 1.65;
   }
   .exam .examCoupon .line {
-    border-top: 3px dotted #003893;
+    height: 3px;
   }
   .exam .examCoupon .code .text {
     font-size: 14px;
@@ -893,6 +906,12 @@ img {
   .exam .examCoupon .code .copy {
     width: 27px;
     height: 27px;
+  }
+  .exam .examCoupon .code .copy.hidden-pc {
+    display: inline-block;
+  }
+  .exam .examCoupon .code .copy.hidden-mob {
+    display: none;
   }
   .exam .examCoupon .method {
     font-size: 13px;
@@ -994,4 +1013,145 @@ img {
     left: -2%;
     bottom: 7%;
   }
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 90;
+}
+.popup .popupMain {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 35%;
+  max-width: 820px;
+  box-shadow: 0 0 40px #ffffff;
+}
+@media only screen and (max-width: 1024px) {
+  .popup .popupMain {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .popup .popupMain {
+    width: 80%;
+  }
+}
+.popup.examMethod .popupMain {
+  width: 50%;
+  max-width: 960px;
+  height: 80%;
+  padding: 8px;
+  background-color: #ffffff;
+}
+.popup.examMethod .methodContent {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 30px 40px;
+  font-size: 24px;
+  font-weight: bold;
+  font-style: italic;
+  line-height: 1.8;
+  letter-spacing: 1px;
+  border: 5px solid #436cab;
+  overflow-y: scroll;
+}
+.popup.examMethod .methodContent img {
+  display: block;
+  width: 30%;
+  max-width: 223px;
+  margin: auto;
+}
+.popup.examMethod .methodContent p {
+  text-align: center;
+  margin: 20px 0;
+}
+.popup.examMethod .methodContent ul {
+  margin: 20px 0 20px 25px;
+}
+.popup.examMethod .methodContent ul li {
+  list-style: decimal;
+}
+@media only screen and (max-width: 1440px) {
+  .popup.examMethod .methodContent {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 1280px) {
+  .popup.examMethod .methodContent {
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .popup.examMethod .popupMain {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .popup.examMethod .methodContent {
+    padding: 30px 15px;
+    font-size: 16px;
+    letter-spacing: 0;
+  }
+  .popup.examMethod .methodContent img {
+    min-width: 150px;
+  }
+  .popup.examMethod .methodContent p {
+    margin: 15px 0;
+  }
+  .popup.examMethod .methodContent ul {
+    margin: 15px 0 15px 25px;
+  }
+}
+.popup.examDownload .popupMain {
+  padding: 8px;
+  background-color: #ffffff;
+}
+.popup.examDownload .downContent {
+  box-sizing: border-box;
+  height: 100%;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border: 5px solid #436cab;
+}
+.popup.examDownload .downContent p {
+  text-align: center;
+  margin-bottom: 20px;
+}
+@media only screen and (max-width: 768px) {
+  .popup.examDownload .downContent {
+    padding: 15px;
+    font-size: 13px;
+  }
+}
+.popup .popupClose {
+  position: absolute;
+  top: 0;
+  right: -3%;
+  transform: translateX(100%);
+  display: block;
+  width: 23px;
+}
+@media only screen and (max-width: 640px) {
+  .popup .popupClose {
+    width: 5%;
+    min-width: 15px;
+  }
+}
+
+.txtBlue {
+  color: #0071bc;
+}
+
+.txtPink {
+  color: #d60067;
 }

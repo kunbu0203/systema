@@ -15,7 +15,8 @@ var question =[
 				correct: false
 			}
 		],
-		conclusion: '能屈能伸軟實力大丈夫<br>舒緩牙齦壓力超級有淨'
+		conclusion: '能屈能伸軟實力大丈夫<br>舒緩牙齦壓力超級有淨',
+		image: './images/knowledgeImg07.jpg'
 	},
 	{
 		title: '「護齦神盾」適齦佳修護PLUS牙膏的三大護齦保養配方能提供什麼幫助？',
@@ -37,7 +38,8 @@ var question =[
 				correct: true
 			}
 		],
-		conclusion: '牙刷月更換偵查精兵<br>關心口腔健康真愛認證'
+		conclusion: '牙刷月更換偵查精兵<br>關心口腔健康真愛認證',
+		image: './images/knowledgeImg05.jpg'
 	},
 	{
 		title: '漱口水越辣越有效嗎？',
@@ -51,7 +53,8 @@ var question =[
 				correct: true
 			}
 		],
-		conclusion: '溫和抗敵新一代宗師<br>以柔克剛消滅牙菌斑'
+		conclusion: '溫和抗敵新一代宗師<br>以柔克剛消滅牙菌斑',
+		image: './images/knowledgeImg04.jpg'
 	},
 	{
 		title: '牙刷應多久更換一支才健康？',
@@ -69,7 +72,8 @@ var question =[
 				correct: false
 			}
 		],
-		conclusion: '牙刷月更換偵查精兵<br>關心口腔健康真愛認證'
+		conclusion: '牙刷月更換偵查精兵<br>關心口腔健康真愛認證',
+		image: './images/knowledgeImg02.jpg'
 	},
 	{
 		title: '牙膏和家人共用是否正確？',
@@ -83,7 +87,8 @@ var question =[
 				correct: true
 			}
 		],
-		conclusion: '牙刷月更換偵查精兵<br>關心口腔健康真愛認證'
+		conclusion: '牙刷月更換偵查精兵<br>關心口腔健康真愛認證',
+		image: './images/knowledgeImg03.jpg'
 	},
 	{
 		title: '以下哪項好習慣能防止病從口入？',
@@ -101,7 +106,8 @@ var question =[
 				correct: false
 			}
 		],
-		conclusion: '月圓人團圓聚餐公筷母匙<br>朋友圈防疫護齦小達人'
+		conclusion: '月圓人團圓聚餐公筷母匙<br>朋友圈防疫護齦小達人',
+		image: './images/knowledgeImg01.jpg'
 	},
 	{
 		title: '如何挑選與使用護齦漱口水?',
@@ -123,7 +129,8 @@ var question =[
 				correct: true
 			}
 		],
-		conclusion: '最懂護齦做好做滿<br>真是（適）贏（齦）家（佳）'
+		conclusion: '最懂護齦做好做滿<br>真是（適）贏（齦）家（佳）',
+		image: './images/knowledgeImg06.jpg'
 	}
 ];
 var qNum = 0;
@@ -133,6 +140,7 @@ function enterText(qNum){
 	$('.answers').empty();
 	for (var i=0; i<question[qNum].answer.length; i++) {
 		$('.answers').append('<li class="answer" data-answer="'+i+'">'+question[qNum].answer[i].text+'</li>');
+		$('.tipImg').attr('src', question[qNum].image);
 	}
 }
 
@@ -255,7 +263,8 @@ $(document).ready(function () {
 		var $this = $(this),
 		value = $this.prev("input").val();
 		window.Clipboard.copy(value);
-		alert('優惠碼已複製');
+		$('.examDownload').fadeIn();
+		$('body').addClass('popupShow');
 	});
 
 	$('.tryAgain').click(function (e) { 
@@ -266,6 +275,24 @@ $(document).ready(function () {
 		setTimeout(function() {
 			setNum();
 		}, 1000);
+	});
+
+	$('.popupClose').click(function (e) { 
+		e.preventDefault();
+		$('.popup').fadeOut();
+		$('body').removeClass('popupShow');
+	});
+
+	$('.tip').click(function (e) { 
+		e.preventDefault();
+		$('.examTip').fadeIn();
+		$('body').addClass('popupShow');
+	});
+
+	$('.method').click(function (e) { 
+		e.preventDefault();
+		$('.examMethod').fadeIn();
+		$('body').addClass('popupShow');
 	});
 
 	// setInterval(function(){

@@ -288,7 +288,8 @@ article {
 }
 @media only screen and (max-width: 768px) {
   .profession {
-    padding: 10% 0 23%;
+    padding: 10% 0 35%;
+    background-image: url(../images/video_BG_mob.png);
   }
 }
 .profession .wrapper {
@@ -438,7 +439,8 @@ article {
 }
 @media only screen and (max-width: 768px) {
   .introduction {
-    padding: 15% 0;
+    margin-top: -18%;
+    padding: 25% 0 20% 0;
   }
 }
 .introduction .wrapper {
