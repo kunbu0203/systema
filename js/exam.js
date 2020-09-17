@@ -145,9 +145,20 @@ function enterText(qNum){
 }
 
 var today = new Date(),
-	milliseconds = today.getTime(),
-	startDate = new Date(2020, (9-1), 5);
-var visits = parseInt((today - startDate)/300000+500);
+	// startDate = new Date(2020, (9-1), 25, 11, 30),
+	// slowDownDate = new Date(2020, (10-1), 2);
+	// 測試時間
+	startDate = new Date(2020, (8-1), 25, 11, 30),
+	slowDownDate = new Date(2020, (9-1), 1);
+	// 測試時間
+var visits;
+
+if (today > slowDownDate) {
+	visits = parseInt(((slowDownDate - startDate)/300000+500)+((today - slowDownDate)/8640000));
+} else {
+	visits = parseInt((today - startDate)/300000+500);
+}
+
 var visitsStr = visits.toString();
 var strLength = visitsStr.length;
 
@@ -235,14 +246,14 @@ $(document).ready(function () {
 		var aNum = e.target.dataset.answer;
 		$('.examResult').fadeIn();
 		if (question[qNum].answer[aNum].correct == true){
-			console.log('成功');
+			// console.log('成功');
 			$('.correct .content .main').html(question[qNum].conclusion);
 			$('.resultItem.correct').fadeIn();
 		} else if (qNum == question.length - 1){
-			console.log('全失敗');
+			// console.log('全失敗');
 			$('.resultItem.allWrong').fadeIn();
 		} else {
-			console.log('失敗');
+			// console.log('失敗');
 			qNum = qNum+1;
 			$('.resultItem.wrong').fadeIn();
 		}
