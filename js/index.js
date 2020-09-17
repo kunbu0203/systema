@@ -15,9 +15,21 @@ function preload() {
     "images/BG_m.jpg",
     "images/BG_slider_m.png",
     "images/BG_slider.png",
+    "images/blackboard.png",
+    "images/blackboard_mob.png",
     "images/BG.jpg",
+    "images/codeBox.png",
     "images/doctor.png",
     "images/dollx2.png",
+    "images/exam_doctor.png",
+    "images/exam_doctor_good.png",
+    "images/exam_doctor02.png",
+    "images/exam_dolls_allWrong.png",
+    "images/exam_dolls_wrong.png",
+    "images/exam_man.png",
+    "images/exam_msg_coupon.png",
+    "images/exam_msg_coupon_mob.png",
+    "images/exam_title.png",
     "images/fb_share.jpg",
     "images/hands.png",
     "images/knowledgeImg01.jpg",
@@ -26,6 +38,7 @@ function preload() {
     "images/knowledgeImg04.jpg",
     "images/knowledgeImg05.jpg",
     "images/knowledgeImg06.jpg",
+    "images/knowledgeImg07.jpg",
     "images/knowledgeTitle.png",
     "images/loading_bg_mb.jpg",
     "images/loading_bg.jpg",
@@ -35,6 +48,8 @@ function preload() {
     "images/mouthwash.png",
     "images/pattern.png",
     "images/products_m.png",
+    "images/ribbonLeft.png",
+    "images/ribbonRight.png",
     "images/products.png",
     "images/toothbrush_m.png",
     "images/toothbrush.png",
@@ -44,7 +59,9 @@ function preload() {
     "images/toothbrushX3.png",
     "images/toothpaste_m.png",
     "images/toothpaste.png",
-    "images/video_BG.jpg"
+    "images/video_BG.jpg",
+    "images/video_BG.png",
+    "images/video_BG_mob.png"
   ];
   queue.on("complete", function (event) {
     //console.log('Complete');
@@ -164,6 +181,26 @@ function doAnimate(){
       // .addIndicators({ name: "2 (duration: 0)" }) // 指標顯示
       .addTo(controller);
     // part02 end--------------------------
+
+    // part02_2 start--------------------------
+
+    TweenMax.set('.videos .wrapper', {y:100,opacity:0})
+
+    var tween2_2 = new TimelineMax()
+    .add(TweenMax.to('.videos .wrapper', .5, {y:0,opacity:1}))
+
+    // build scene
+    var scene2_2 = new ScrollMagic.Scene({
+      triggerElement: ".videos",
+    //   duration: 500,
+      offset: 0, //指標位移
+      // triggerHook: .5, // 觸發位置 0-1,onLeave,onCenter,onEnter
+      reverse: false, //動畫重複 default:true
+    })
+      .setTween(tween2_2)
+      .addIndicators({ name: "2 (duration: 0)" }) // 指標顯示
+      .addTo(controller);
+    // part02_2 end--------------------------
 
     // part03 start--------------------------
 
