@@ -182,8 +182,8 @@ img {
 }
 .exam .examIndex .visits .numberBox .number {
   position: absolute;
-  top: calc(50% - .5px);
-  left: calc(50% - .5px);
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
 }
 .exam .examIndex .visits .numberBox .number.animate {
