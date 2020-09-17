@@ -218,6 +218,15 @@
 					font-size: 14px
 					border: 1px solid #cccccc
 					box-shadow: 0 2px 3px rgba(0,0,0,0.3)
+			+rwd(280px)
+				.visits01
+					width: 64px
+				.visits02
+					width: 76px
+				.numberBox
+					width: 14px
+					height: 15px
+					font-size: 12px
 		.description
 			position: relative
 			margin: 7% 0
@@ -257,6 +266,9 @@
 				font-size: 14px
 			+rwd(420px)
 				font-size: 13px
+			+rwd(280px)
+				font-size: 12px
+				line-height: 1.5
 		.message
 			width: 91%
 			// max-width: 596px
@@ -359,6 +371,13 @@
 				.text
 					width: calc( 100% - 30px )
 					font-size: 18px
+			+rwd(280px)
+				.number
+					width: 18px
+					height: 18px
+				.text
+					width: calc( 100% - 26px )
+					font-size: 15px
 		.answer
 			position: relative
 			box-sizing: border-box
@@ -408,6 +427,9 @@
 			+rwd(520px)
 				margin: 4% auto 0
 				font-size: 14px
+			+rwd(280px)
+				width: 80%
+				font-size: 13px
 	.examResult
 		.correct
 			.head
@@ -528,11 +550,19 @@
 			+rwd(420px)
 				.message
 					&:before, &:after
-						width: calc( (100% - 115px)/2 )
+						width: calc( (100% - 100px)/2 )
 					span
 						font-size: 21px
 				.main
 					font-size: 16px
+			+rwd(280px)
+				.message
+					&:before, &:after
+						width: calc( (100% - 88px)/2 )
+					span
+						font-size: 18px
+				.main
+					font-size: 14px
 		.wrong,.allWrong
 			.head
 				width: 70%
@@ -570,6 +600,9 @@
 			+rwd(420px)
 				.message
 					font-size: 14px
+			+rwd(280px)
+				.message
+					font-size: 13px
 	.examCoupon
 		.head
 			width: 87%
@@ -771,6 +804,21 @@
 					font-size: 13px
 				.copy
 					margin-top: -3px
+		+rwd(280px)
+			.content
+				margin-top: 1%
+			.main
+				line-height: 1.6
+				.hidden-pc,br
+					display: none
+			.code
+				.codeBox
+					width: 100px
+					height: 20px
+					padding: 3px
+					font-size: 12px
+				.copy
+					margin-top: -5px
 
 	.doctor
 		position: absolute
@@ -868,6 +916,12 @@
 					margin: 15px 0
 				ul
 					margin: 15px 0 15px 25px
+		+rwd(280px)
+			.methodContent
+				padding: 20px 5px
+				font-size: 14px
+				img
+					min-width: 120px
 	&.examDownload
 		.popupMain
 			padding: 8px

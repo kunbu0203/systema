@@ -342,6 +342,7 @@ $(document).ready(function () {
 		var $this = $(this),
 		value = $this.prev("input").val();
 		window.Clipboard.copy(value);
+		$("html, body").scrollTop($this.offset().top)
 		$('.examDownload').fadeIn();
 		$('body').addClass('popupShow');
 	});
