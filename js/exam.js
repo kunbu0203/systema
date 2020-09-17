@@ -135,13 +135,71 @@ var question =[
 ];
 var qNum = 0;
 function enterText(qNum){
+	$('.answers,.examAction .examItem.examQA,.examTip .popupMain').empty();
 	$('.question .number').html('<img src="./images/exam_Q'+(qNum+1)+'.png" alt="">');
+	$('.examAction .examItem.examQA').html('<a href="#" class="examBtn tip Q'+qNum+'tip"><img src="./images/btn_tip.png" alt=""></a>');
+	$('.examTip .popupMain').html('<img class="tipImg" src="'+question[qNum].image+'" alt=""><a href="#" class="popupClose popup'+qNum+'close"><img src="./images/popupClose.png" alt=""></a>');
 	$('.question .text').text(question[qNum].title);
-	$('.answers').empty();
-	for (var i=0; i<question[qNum].answer.length; i++) {
-		$('.answers').append('<li class="answer" data-answer="'+i+'">'+question[qNum].answer[i].text+'</li>');
-		$('.tipImg').attr('src', question[qNum].image);
+	for (var a=0; a<question[qNum].answer.length; a++) {
+		$('.answers').append('<li class="answer" data-question="'+qNum+'" data-answer="'+a+'">'+question[qNum].answer[a].text+'</li>');
+		$('[data-question="'+qNum+'"][data-answer="'+a+'"]').click(function (e) {
+			e.preventDefault();
+			var ansGA = $(this).data('answer');
+			if ( ansGA == 0 ) {
+				gtag('event', 'Click', {
+					'event_category': '不做白工促淨會',
+					'event_label': '#'+(qNum+1)+'_(A)',
+				});
+				// console.log('#'+(qNum+1)+'_(A)');
+			} else if ( ansGA == 1 ) {
+				gtag('event', 'Click', {
+					'event_category': '不做白工促淨會',
+					'event_label': '#'+(qNum+1)+'_(B)',
+				});
+				// console.log('#'+(qNum+1)+'_(B)');
+			} else if ( ansGA == 2 ) {
+				gtag('event', 'Click', {
+					'event_category': '不做白工促淨會',
+					'event_label': '#'+(qNum+1)+'_(C)',
+				});
+				// console.log('#'+(qNum+1)+'_(C)');
+			} else if ( ansGA == 3 ) {
+				gtag('event', 'Click', {
+					'event_category': '不做白工促淨會',
+					'event_label': '#'+(qNum+1)+'_(D)',
+				});
+				// console.log('#'+(qNum+1)+'_(D)');
+			}
+		});
 	}
+	$('.tip').click(function (e) { 
+		e.preventDefault();
+		$('.examTip').fadeIn();
+		$('body').addClass('popupShow');
+	});
+
+	$('.popupClose').click(function (e) { 
+		e.preventDefault();
+		$('.popup').fadeOut();
+		$('body').removeClass('popupShow');
+	});
+
+	$('.Q'+qNum+'tip').click(function (e) {
+		e.preventDefault();
+		gtag('event', 'Click', {
+			'event_category': '不做白工促淨會',
+			'event_label': '#'+(qNum+1)+'_溫馨提示',
+		});
+		console.log('#'+(qNum+1)+'_溫馨提示');
+	});
+	$('.popup'+qNum+'close').click(function (e) {
+		e.preventDefault();
+		gtag('event', 'Click', {
+			'event_category': '不做白工促淨會',
+			'event_label': '#'+(qNum+1)+'_溫馨提示關閉',
+		});
+		console.log('#'+(qNum+1)+'_溫馨提示關閉');
+	});
 }
 
 var today = new Date(),
@@ -230,6 +288,7 @@ $(document).ready(function () {
 
 	// setNum();
 	$('.start,.answers,.getCoupon,.nextQ,.tryAgain').click(function (e) { 
+		e.preventDefault();
 		$('.examItem,.resultItem').fadeOut();
 	});
 	
@@ -239,7 +298,8 @@ $(document).ready(function () {
 		$('.examQA').fadeIn();
 	});
 	
-	$('.answers').click(function (e) { 
+	$('.answers').click(function (e) {
+		e.preventDefault();
 		if (e.target.nodeName !== 'LI'){
 			return;
 		}
@@ -249,6 +309,7 @@ $(document).ready(function () {
 			// console.log('成功');
 			$('.correct .content .main').html(question[qNum].conclusion);
 			$('.resultItem.correct').fadeIn();
+			$('.examBtn.getCoupon').removeClass('Q'+(qNum-1)+'coupon').addClass('Q'+qNum+'coupon');
 		} else if (qNum == question.length - 1){
 			// console.log('全失敗');
 			$('.resultItem.allWrong').fadeIn();
@@ -257,6 +318,13 @@ $(document).ready(function () {
 			qNum = qNum+1;
 			$('.resultItem.wrong').fadeIn();
 		}
+		$('.Q'+qNum+'coupon').click(function (e) {
+			e.preventDefault();
+			gtag('event', 'Click', {
+				'event_category': '不做白工促淨會',
+				'event_label': '#'+(qNum+1)+'_領取獎勵',
+			});
+		});
 	});
 	
 	$('.getCoupon').click(function (e) { 
@@ -292,12 +360,6 @@ $(document).ready(function () {
 		e.preventDefault();
 		$('.popup').fadeOut();
 		$('body').removeClass('popupShow');
-	});
-
-	$('.tip').click(function (e) { 
-		e.preventDefault();
-		$('.examTip').fadeIn();
-		$('body').addClass('popupShow');
 	});
 
 	$('.method').click(function (e) { 
