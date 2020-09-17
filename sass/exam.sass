@@ -7,6 +7,20 @@
 	100%
 		transform: translateY(0)
 
+@keyframes fluffy
+	0%,80%
+		transform: scale(1, 1) translate(0%, 0%)
+	83%
+		transform: scale(0.9, 0.9) translate(0%, 5%)
+	86%
+		transform: scale(1.3, 0.8) translate(0%, 10%)
+	90%
+		transform: scale(0.8, 1.3) translate(0%, -10%)
+	94%
+		transform: scale(1.1, 0.9) translate(0%, 5%)
+	100%
+		transform: scale(1, 1) translate(0%, 0%)
+
 
 .popupShow
 	overflow: hidden
@@ -32,22 +46,6 @@
 		z-index: 2
 		+rwd(768px)
 			width: 100%
-		// img
-		// 	position: relative
-		// 	z-index: 1
-		// &:before
-		// 	content: ''
-		// 	position: absolute
-		// 	top: 0
-		// 	right: 0
-		// 	bottom: 0
-		// 	left: 0
-		// 	display: block
-		// 	background-image: url(../images/exam_title_shine.png)
-		// 	background-repeat: no-repeat
-		// 	background-size: contain
-		// 	background-position: center
-		// 	z-index: 0
 	.examItem
 		position: absolute
 		top: 0
@@ -263,6 +261,7 @@
 			width: 91%
 			// max-width: 596px
 			margin: auto
+			animation: fluffy 5s infinite linear
 			img
 				&:nth-of-type(2)
 					display: none
