@@ -53,7 +53,7 @@ img {
     transform: translateY(8px);
   }
 }
-.banner .pattern, .banner .dollx2 img, .banner .products img, .banner .doctor img {
+.banner .pattern, .banner .dollx2 img, .banner .products img, .banner .doctor img, .exam {
   opacity: 0;
 }
 

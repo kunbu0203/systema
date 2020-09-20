@@ -3,15 +3,15 @@ var question =[
 		title: '細潔無隱角EX抗敏護齦牙刷，每根刷毛尖端處又再分岔成幾根刷毛？',
 		answer: [
 			{
-				text: '2根',
+				text: 'A. 2根',
 				correct: false
 			},
 			{
-				text: '3根',
+				text: 'B. 3根',
 				correct: true
 			},
 			{
-				text: '沒分岔1根到底',
+				text: 'C. 沒分岔1根到底',
 				correct: false
 			}
 		],
@@ -22,19 +22,19 @@ var question =[
 		title: '「護齦神盾」適齦佳修護PLUS牙膏的三大護齦保養配方能提供什麼幫助？',
 		answer: [
 			{
-				text: '降低牙周病發生率',
+				text: 'A. 降低牙周病發生率',
 				correct: false
 			},
 			{
-				text: '幫助預防牙齦流血問題',
+				text: 'B. 幫助預防牙齦流血問題',
 				correct: false
 			},
 			{
-				text: '減少細菌滋生率',
+				text: 'C. 減少細菌滋生率',
 				correct: false
 			},
 			{
-				text: '以上皆是',
+				text: 'D. 以上皆是',
 				correct: true
 			}
 		],
@@ -45,11 +45,11 @@ var question =[
 		title: '漱口水越辣越有效嗎？',
 		answer: [
 			{
-				text: '是',
+				text: 'A. 是',
 				correct: false
 			},
 			{
-				text: '否',
+				text: 'B. 否',
 				correct: true
 			}
 		],
@@ -60,15 +60,15 @@ var question =[
 		title: '牙刷應多久更換一支才健康？',
 		answer: [
 			{
-				text: '2周',
+				text: 'A. 2周',
 				correct: false
 			},
 			{
-				text: '1個月',
+				text: 'B. 1個月',
 				correct: true
 			},
 			{
-				text: '用到炸毛為止',
+				text: 'C. 用到炸毛為止',
 				correct: false
 			}
 		],
@@ -79,11 +79,11 @@ var question =[
 		title: '牙膏和家人共用是否正確？',
 		answer: [
 			{
-				text: '是',
+				text: 'A. 是',
 				correct: false
 			},
 			{
-				text: '否',
+				text: 'B. 否',
 				correct: true
 			}
 		],
@@ -94,15 +94,15 @@ var question =[
 		title: '以下哪項好習慣能防止病從口入？',
 		answer: [
 			{
-				text: '共用餐具',
+				text: 'A. 共用餐具',
 				correct: false
 			},
 			{
-				text: '使用公筷母匙',
+				text: 'B. 使用公筷母匙',
 				correct: true
 			},
 			{
-				text: '咳嗽不遮掩',
+				text: 'C. 咳嗽不遮掩',
 				correct: false
 			}
 		],
@@ -113,19 +113,19 @@ var question =[
 		title: '如何挑選與使用護齦漱口水?',
 		answer: [
 			{
-				text: '無添加酒精溫和低刺激',
+				text: 'A. 無添加酒精溫和低刺激',
 				correct: false
 			},
 			{
-				text: '有效成分能留存護齦',
+				text: 'B. 有效成分能留存護齦',
 				correct: false
 			},
 			{
-				text: '使用後不需再用清水漱口',
+				text: 'C. 使用後不需再用清水漱口',
 				correct: false
 			},
 			{
-				text: '以上皆是',
+				text: 'D. 以上皆是',
 				correct: true
 			}
 		],
@@ -203,7 +203,7 @@ function enterText(qNum){
 }
 
 var today = new Date(),
-	// startDate = new Date(2020, (9-1), 25, 11, 30),
+	// startDate = new Date(2020, (9-1), 25),
 	// slowDownDate = new Date(2020, (10-1), 2);
 	// 測試時間
 	startDate = new Date(2020, (8-1), 25, 11, 30),
@@ -212,9 +212,9 @@ var today = new Date(),
 var visits;
 
 if (today > slowDownDate) {
-	visits = parseInt(((slowDownDate - startDate)/300000+500)+((today - slowDownDate)/8640000));
+	visits = parseInt(((slowDownDate - startDate)/300000)+((today - slowDownDate)/8640000));
 } else {
-	visits = parseInt((today - startDate)/300000+500);
+	visits = parseInt((today - startDate)/300000);
 }
 
 var visitsStr = visits.toString();
@@ -287,7 +287,7 @@ $(document).ready(function () {
 	setBox();
 
 	// setNum();
-	$('.start,.answers,.getCoupon,.nextQ,.tryAgain').click(function (e) { 
+	$('.start,.getCoupon,.nextQ,.tryAgain').click(function (e) { 
 		e.preventDefault();
 		$('.examItem,.resultItem').fadeOut();
 	});
@@ -303,6 +303,7 @@ $(document).ready(function () {
 		if (e.target.nodeName !== 'LI'){
 			return;
 		}
+		$('.examItem,.resultItem').fadeOut();
 		var aNum = e.target.dataset.answer;
 		$('.examResult').fadeIn();
 		if (question[qNum].answer[aNum].correct == true){
@@ -342,7 +343,7 @@ $(document).ready(function () {
 		var $this = $(this),
 		value = $this.prev("input").val();
 		window.Clipboard.copy(value);
-		$("html, body").scrollTop($this.offset().top)
+		// $('html, body').scrollTop($this.offset().top);
 		$('.examDownload').fadeIn();
 		$('body').addClass('popupShow');
 	});
@@ -372,7 +373,7 @@ $(document).ready(function () {
 	// setInterval(function(){
 	// 	today = new Date(),
 	// 	milliseconds = today.getTime();
-	// 	visits = parseInt((today - startDate)/300000+500);
+	// 	visits = parseInt((today - startDate)/300000);
 	// 	visitsStr = visits.toString();
 	// 	var remainder = ((today - startDate)%300000).toString();
 	// 		sec = remainder.substr(0,2);

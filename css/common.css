@@ -137,7 +137,6 @@ img {
 
 .is-loading {
   height: 100vh;
-  overflow: hidden;
 }
 .is-loading .loading {
   display: block;

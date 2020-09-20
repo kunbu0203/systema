@@ -36,6 +36,24 @@ img {
     transform: scale(1, 1) translate(0%, 0%);
   }
 }
+@keyframes copyClick {
+  0% {
+    transform: translate(0);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    transform: translate(0);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+  }
+  75% {
+    transform: translateY(5px);
+    box-shadow: none;
+  }
+  100% {
+    transform: translate(0);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+  }
+}
 .popupShow {
   overflow: hidden;
 }
@@ -64,9 +82,15 @@ img {
   margin: auto;
   z-index: 2;
 }
+.exam .examTitle .target {
+  position: absolute;
+  top: 23%;
+  left: 0;
+}
 @media only screen and (max-width: 768px) {
   .exam .examTitle {
     width: 100%;
+    padding-top: 5%;
   }
 }
 .exam .examItem {
@@ -374,6 +398,7 @@ img {
   }
 }
 .exam .examIndex .message {
+  display: block;
   width: 91%;
   margin: auto;
   animation: fluffy 5s infinite linear;
@@ -525,7 +550,6 @@ img {
   font-weight: bold;
   font-style: normal;
   color: #fff;
-  list-style-type: upper-alpha;
   text-align: left;
   text-decoration: none;
   border-radius: 15px;
@@ -852,6 +876,7 @@ img {
   background-color: #d60067;
   border: 4px solid #000000;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+  animation: copyClick 1s infinite linear;
 }
 .exam .examCoupon .code .copy:before {
   content: "";

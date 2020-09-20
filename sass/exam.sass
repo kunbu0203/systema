@@ -21,6 +21,19 @@
 	100%
 		transform: scale(1, 1) translate(0%, 0%)
 
+@keyframes copyClick
+	0%
+		transform: translate(0)
+		box-shadow: 0 5px 5px rgba(0,0,0,0.3)
+	50%
+		transform: translate(0)
+		box-shadow: 0 5px 5px rgba(0,0,0,0.3)
+	75%
+		transform: translateY(5px)
+		box-shadow: none
+	100%
+		transform: translate(0)
+		box-shadow: 0 5px 5px rgba(0,0,0,0.3)
 
 .popupShow
 	overflow: hidden
@@ -44,8 +57,13 @@
 		width: 68%
 		margin: auto
 		z-index: 2
+		.target
+			position: absolute
+			top: 23%
+			left: 0
 		+rwd(768px)
 			width: 100%
+			padding-top: 5%
 	.examItem
 		position: absolute
 		top: 0
@@ -270,6 +288,7 @@
 				font-size: 12px
 				line-height: 1.5
 		.message
+			display: block
 			width: 91%
 			// max-width: 596px
 			margin: auto
@@ -389,7 +408,6 @@
 			font-weight: bold
 			font-style: normal
 			color: #fff
-			list-style-type: upper-alpha
 			text-align: left
 			text-decoration: none
 			border-radius: 15px
@@ -653,6 +671,7 @@
 				background-color: $pink
 				border: 4px solid #000000
 				box-shadow: 0 5px 5px rgba(0,0,0,0.3)
+				animation: copyClick 1s infinite linear
 				&:before
 					content: ''
 					display: block

@@ -65,6 +65,9 @@ function preload() {
   ];
   queue.on("complete", function (event) {
     //console.log('Complete');
+    $('html, body').animate({
+      scrollTop: $('.examTitle .target').offset().top
+    }, 0);
     setTimeout(function () {
       $('.loading').fadeOut(function () {
           $('body').removeClass('is-loading');
@@ -163,10 +166,10 @@ function doAnimate(){
 
     // part02 start--------------------------
 
-    TweenMax.set('.exam .wrapper', {y:100,opacity:0})
+    TweenMax.set('.exam', {y:100,opacity:0})
 
     var tween2 = new TimelineMax()
-    .add(TweenMax.to('.exam .wrapper', .5, {y:0,opacity:1}))
+    .add(TweenMax.to('.exam', .5, {y:0,opacity:1}))
     .eventCallback("onComplete", setNum)
 
     // build scene
@@ -473,6 +476,5 @@ $(document).ready(function(){
       $('.nav').slideUp();
     }
   });
-
 })
 

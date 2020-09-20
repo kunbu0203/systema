@@ -38,6 +38,12 @@ $(document).ready(function(){
       'event_label': '立即挑戰',
     });
   });
+  $('.message.start').click(function () {
+    gtag('event', 'Click', {
+      'event_category': '不做白工促淨會',
+      'event_label': 'intro',
+    });
+  });
   $('.examBtn.review').click(function () {
     gtag('event', 'Click', {
       'event_category': '不做白工促淨會',
