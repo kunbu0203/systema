@@ -65,9 +65,6 @@ function preload() {
   ];
   queue.on("complete", function (event) {
     //console.log('Complete');
-    $('html, body').animate({
-      scrollTop: $('.examTitle .target').offset().top
-    }, 0);
     setTimeout(function () {
       $('.loading').fadeOut(function () {
           $('body').removeClass('is-loading');

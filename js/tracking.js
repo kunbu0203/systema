@@ -80,6 +80,12 @@ $(document).ready(function(){
       'event_label': '再次挑戰',
     });
   });
+  $('.copy').click(function () {
+    gtag('event', 'Click', {
+      'event_category': '不做白工促淨會',
+      'event_label': '下載優惠碼',
+    });
+  });
 
 
   $('.introduction .PD_slider .bigBtn').click(function () {

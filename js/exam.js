@@ -203,15 +203,13 @@ function enterText(qNum){
 }
 
 var today = new Date(),
-	// startDate = new Date(2020, (9-1), 25),
-	// slowDownDate = new Date(2020, (10-1), 2);
-	// 測試時間
-	startDate = new Date(2020, (8-1), 25, 11, 30),
-	slowDownDate = new Date(2020, (9-1), 1);
-	// 測試時間
+	startDate = new Date(2020, (9-1), 25),
+	slowDownDate = new Date(2020, (10-1), 2);
 var visits;
 
-if (today > slowDownDate) {
+if (today < startDate) {
+	visits = 0;
+} else if (today > slowDownDate) {
 	visits = parseInt(((slowDownDate - startDate)/300000)+((today - slowDownDate)/8640000));
 } else {
 	visits = parseInt((today - startDate)/300000);
@@ -370,23 +368,4 @@ $(document).ready(function () {
 		$('body').addClass('popupShow');
 	});
 
-	// setInterval(function(){
-	// 	today = new Date(),
-	// 	milliseconds = today.getTime();
-	// 	visits = parseInt((today - startDate)/300000);
-	// 	visitsStr = visits.toString();
-	// 	var remainder = ((today - startDate)%300000).toString();
-	// 		sec = remainder.substr(0,2);
-	// 		// console.log(sec);
-	// 		// console.log(remainder.length);
-	// 		// console.log(visits);
-	// 	if ((sec == '59') && (remainder.length == 5)){
-	// 		$('.visits .number').addClass('animate').html('0<br>1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>0');
-	// 	} else {
-	// 		return;
-	// 	}
-	// 	setTimeout(function() {
-	// 		setNum();
-	// 	}, 1000);
-	// },1000);
 });
